@@ -1,10 +1,23 @@
 "use client";
-
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function FeaturedWorkMarquee() {
+interface MarqueeProps {
+	text: string;
+	speed?: number;
+	repeatCount?: number;
+	className?: string;
+	containerClassName?: string;
+}
+
+export default function Marquee({
+	text,
+	speed = 60,
+	repeatCount = 8,
+	className = "mx-8 text-5xl md:text-[12vw] font-medium ",
+	containerClassName = "overflow-hidden h-[30vh] py-6 flex items-center border-b border-black dark:border-zinc-600",
+}: MarqueeProps) {
 	const trackRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
@@ -16,27 +29,25 @@ export default function FeaturedWorkMarquee() {
 
 		gsap.to(track, {
 			x: -distance,
-			duration: 60,
+			duration: speed,
 			ease: "none",
 			repeat: -1,
 		});
-	});
+	}, []);
 
 	return (
-		<div className="overflow-hidden h-[30vh] py-6 border-b border-white dark:border-zinc-600 flex items-center font-twid">
+		<div className={containerClassName}>
 			<div
 				ref={trackRef}
 				className="flex w-max whitespace-nowrap"
-				onMouseEnter={() => gsap.globalTimeline.pause()}
-				onMouseLeave={() => gsap.globalTimeline.resume()}
 			>
 				{[...Array(2)].map((_, copy) =>
-					[...Array(8)].map((_, i) => (
+					[...Array(repeatCount)].map((_, i) => (
 						<span
 							key={`${copy}-${i}`}
-							className="mx-8 text-5xl md:text-[14vw] font-medium font-twid"
+							className={className}
 						>
-							featured works©
+							{text}
 						</span>
 					))
 				)}

@@ -13,7 +13,7 @@ export default function HeroText() {
 					<span>FOR TIMELESS</span>
 					<RotatingText />
 				</div>
-				<div className="h-[45vh] w-[25vw] border rounded-xl bg-white"></div>
+				<div className="h-[45vh] w-[25vw] border rounded-xl bg-black dark:bg-white"></div>
 			</div>
 
 			<div className="h-[35vh] w-full border-b border-black dark:border-zinc-600 flex items-center justify-center">

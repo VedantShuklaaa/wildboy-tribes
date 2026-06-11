@@ -7,40 +7,61 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollRevealText() {
+interface ScrollRevealTextProps {
+	text: string;
+	className?: string;
+	initialColor?: string;
+	stagger?: number;
+	start?: string;
+	end?: string;
+}
+
+export default function ScrollRevealText({
+	text,
+	className = "",
+	initialColor = "text-zinc-400",
+	stagger = 0.01,
+	start = "top 80%",
+	end = "bottom 40%",
+}: ScrollRevealTextProps) {
 	const container = useRef<HTMLParagraphElement>(null);
 
-	useGSAP(() => {
-		if (!container.current) return;
-		const chars = container.current?.querySelectorAll(".char");
+	useGSAP(
+		() => {
+			if (!container.current) return;
 
-		gsap.to(chars, {
-			color: "#ffffff",
-			stagger: 0.02,
-			ease: "none",
-			scrollTrigger: {
-				trigger: container.current,
-				start: "top 80%",
-				end: "bottom 40%",
-				scrub: true,
-			},
-		});
-	});
+			const words = container.current.querySelectorAll(".char");
 
-	const text =
-		"We’re a creative design and development studio based in India, working with brands across branding, UI/UX, motion, and interactive web experiences. Our focus is on building clear, scalable digital systems, supported by AI-enhanced workflows that help us move faster without compromising craft.";
+			gsap.to(words, {
+				color: "var(--foreground)",
+				stagger: 0.03,
+				ease: "none",
+				scrollTrigger: {
+					trigger: container.current,
+					start,
+					end,
+					scrub: 1,
+				},
+			});
+		},
+		{ scope: container }
+	);
 
 	return (
 		<p
 			ref={container}
-			className="text-4xl font-twid font-medium leading-tight"
+			className={` ${className}`}
 		>
-			{text.split("").map((char, i) => (
+			{text.split(" ").map((word, i) => (
 				<span
 					key={i}
-					className="char text-zinc-400"
+					className={`char ${initialColor}`}
+					style={{
+						display: "inline-block",
+						marginRight: "0.25em",
+					}}
 				>
-					{char}
+					{word}
 				</span>
 			))}
 		</p>

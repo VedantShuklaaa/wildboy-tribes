@@ -1,17 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
 
+interface SlidingTextProps {
+	text: string;
+	className?: string;
+}
 
-
-export default function AboutUsText() {
-	const text = "ABOUT US";
-
+export default function SlidingText({
+	text,
+	className = "",
+}: SlidingTextProps) {
 	return (
 		<motion.div
 			initial="rest"
 			whileHover="hover"
 			animate="rest"
-			className="relative overflow-hidden h-[1.2em] w-fit cursor-pointer "
+			className={`relative overflow-hidden h-[1.2em] w-fit cursor-pointer ${className}`}
 		>
 			{/* Current text */}
 			<div className="flex">
