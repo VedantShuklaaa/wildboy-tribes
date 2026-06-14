@@ -135,7 +135,9 @@ export default function Page() {
 
 			<Lmao />
 
-
+			<div>
+				<Marquee text="contact©" />
+			</div>
 			<ContactUs />
 		</div>
 	)
@@ -143,13 +145,21 @@ export default function Page() {
 
 export function Lmao() {
 	return (
-		<div className="min-h-screen w-full flex font-twid">
-			<div className="w-full flex items-center  p-4 text-9xl" >
-				FAQ
+		<div className="h-screen w-full flex flex-col font-twid border-b border-black dark:border-zinc-600">
+			<div className="h-[95%] flex items-center justify-center">
+				<div className="h-full w-full flex items-center  p-4 text-9xl" >
+					FAQ
+				</div>
+
+				<div className="h-full w-full relative z-50 px-4 flex items-center justify-center">
+					<FAQAccordion />
+				</div>
 			</div>
 
-			<div className="w-full relative z-50 px-4 flex items-center justify-center">
-				<FAQAccordion />
+			<div className="h-[5%] w-full h-[5vh] flex items-center justify-between px-4 text-black dark:text-zinc-400 text-xl">
+				<span>© Get in Touch</span>
+				<span>(CAD® — 09)</span>
+				<span>Studio Wrap</span>
 			</div>
 		</div>
 	)
