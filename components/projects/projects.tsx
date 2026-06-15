@@ -57,7 +57,7 @@ export default function Projects() {
 
 	return (
 		<div>
-			<div className="grid grid-cols-2 grid-rows-3 h-[240vh] font-onest font-light" id="work">
+			<div className="grid grid-cols-2 grid-rows-3 h-[240vh] font-onest font-light border-t border-black dark:border-zinc-900" id="work">
 				{projects.map((project, index) => (
 					<div
 						key={project.title}

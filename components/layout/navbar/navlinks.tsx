@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { NavLink } from "../navAnimation/navAnimation";
-import Link from "next/link";
+import TransitionLink from "../pageTransition/transitionLink";
 
 const navItems = [
 	{ label: "Home", href: "/" },
 	{ label: "About", href: "/about" },
 	{ label: "Work", href: "/work" },
 	{ label: "Services", href: "/services" },
-	{ label: "Community", href: "/href"},
+	{ label: "Community", href: "/community" },
 	{ label: "Contact", href: "/contact" },
-	{ label: "Blog", href: "/Blog" },
+	{ label: "Blog", href: "/blog" },
 	{ label: "Merch", href: "/merch" },
 ];
 
@@ -41,9 +41,9 @@ export default function Navlinks() {
 					variants={item}
 					className="flex items-center text-black dark:text-zinc-400 hover:text-[#F04D5A] dark:hover:text-[#F04D5A]"
 				>
-					<Link href={label.href}>
+					<TransitionLink href={label.href}>
 						<NavLink text={label.label} />
-					</Link>
+					</TransitionLink>
 
 					{i < navItems.length - 1 && (
 						<span className="pointer-events-none">,</span>

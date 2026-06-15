@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import ScrollRevealText from "@/components/scrolltriger/fillColor";
 import SlidingText from "../aboutUsButton/aboutUsButton";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TiltCard from "../tiltCard/tiltCard";
+import { SentenceRoll } from "../navAnimation/navAnimation";
 
 interface OrbitBackgroundProps {
 	pivotX?: string;
@@ -127,20 +129,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
 	{
-		title: "Card One",
-		color: "bg-white",
-	},
-	{
-		title: "Card Two",
+		title: "DESIGN",
 		color: "bg-black",
+		tilt: "2",
+		cardColor: "bg-red-400",
 	},
 	{
-		title: "Card Three",
-		color: "bg-purple-200",
+		title: "ENGINEERING",
+		color: "bg-purple-300",
+		tilt: "-4",
+		cardColor: "bg-black",
 	},
 	{
-		title: "Card Four",
+		title: "STRATEGY",
 		color: "bg-teal-200",
+		tilt: "2",
+		cardColor: "bg-white",
+	},
+	{
+		title: "DESIGN",
+		color: "bg-black",
+		tilt: "-4",
+		cardColor: "bg-red-400",
 	},
 ];
 
@@ -193,18 +203,22 @@ export function CardStack() {
 			ref={sectionRef}
 			className="relative h-screen w-full"
 		>
-			{cards.map((card, index) => (
+			{cards.map((card, idx) => (
 				<div
-					key={index}
+					key={idx}
 					className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 					style={{
-						zIndex: index - 1,
+						zIndex: idx - 1,
 					}}
 				>
-					<div
-						className={`stack-card h-screen w-[70vw] flex items-center justify-center text-6xl font-bold text-white ${card.color}`}
-					>
-						{card.title}
+					<div className={`stack-card h-screen w-screen flex items-center justify-center text-[150px] font-bold text-white ${card.color}`}>
+						<div className="h-full w-full flex flex-col justify-between p-10">
+							<div>
+								<span className="h-10 w-10 rounded-full border border-white flex items-center justify-center text-xl">{idx + 1}</span>
+							</div>
+							<span className={`${card.color === "bg-black" ? "text-white" : `text-black`}`}>{card.title}</span>
+						</div>
+						<TiltCard className={`h-[800px] w-[800px] right-20`} cardClassName={` ${card.cardColor}`} tilt={card.tilt} />
 					</div>
 				</div>
 			))}

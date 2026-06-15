@@ -4,7 +4,7 @@ import ScrollRevealText from "../scrolltriger/fillColor";
 
 const text = "We’re India’s first nightlife architects and management studio. We design operating systems that make venues culturally relevant, community - led, and consistently engaging.";
 
-export default function FloadCard() {
+export default function FloatCard() {
 	return (
 		<div className="relative h-[100vh] w-full font-twid">
 			<FloatingCard

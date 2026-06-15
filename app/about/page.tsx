@@ -1,6 +1,6 @@
 import Marquee from "@/components/marquee/marquee1";
 import Reveal from "@/components/marquee/reveal";
-import FloadCard from "@/components/aboutUsPage/floatCard";
+import FloatCard from "@/components/aboutUsPage/floatCard";
 import ContactUs from "@/components/contactUsCard/contactUs";
 
 
@@ -34,7 +34,7 @@ export default function Page() {
 			<Reveal>
 				<Marquee text="about apes©" />
 			</Reveal>
-			<FloadCard />
+			<FloatCard />
 
 			<div className="h-screen w-full flex flex-col border-b border-black dark:border-zinc-600">
 				<div className="flex flex-col p-4">

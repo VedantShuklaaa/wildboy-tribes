@@ -28,7 +28,7 @@ export default function Loader({ onComplete }: LoaderProps) {
 		)
 			// 2. text grows + slides to bottom simultaneously
 			.to(textRef.current, {
-				y: "26vh",
+				y: "26.5vh",
 				fontSize: "6vw",
 				duration: 2,
 				ease: "power3.inOut",

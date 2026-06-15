@@ -16,7 +16,7 @@ export default function Marquee({
 	speed = 60,
 	repeatCount = 8,
 	className = "mx-8 text-5xl md:text-[12vw] font-medium ",
-	containerClassName = "overflow-hidden h-[30vh] py-6 flex items-center border-b border-black dark:border-zinc-600",
+	containerClassName = "overflow-hidden h-[30vh] py-6 flex items-center",
 }: MarqueeProps) {
 	const trackRef = useRef<HTMLDivElement>(null);
 

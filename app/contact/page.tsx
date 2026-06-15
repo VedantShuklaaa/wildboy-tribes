@@ -1,5 +1,7 @@
 import Marquee from "@/components/marquee/marquee1";
 import Reveal from "@/components/marquee/reveal";
+import Jobs from "@/components/workPages/jobs";
+import Links from "@/components/workPages/links";
 
 
 export default function Page() {
@@ -18,29 +20,10 @@ export default function Page() {
 			<Reveal>
 				<Marquee text="contact us©" />
 			</Reveal>
-			<UnderlineHover>
-				<span className="text-2xl font-onest">
-					View Project
-				</span>
-			</UnderlineHover>
+			<Links />
+
+			<Jobs />
 		</div>
 	)
 }
 
-interface UnderlineHoverProps {
-	children: React.ReactNode;
-}
-
-export function UnderlineHover({
-	children,
-}: UnderlineHoverProps) {
-	return (
-		<div className="group relative w-full pb-2 cursor-pointer">
-			{children}
-
-			<div className="absolute bottom-0 left-0 h-px w-full bg-zinc-500" />
-
-			<div className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-x-100" />
-		</div>
-	);
-}

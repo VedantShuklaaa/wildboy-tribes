@@ -7,6 +7,7 @@ import { LoaderWrapper } from "@/components/layout/loader/loader";
 import "./globals.css";
 import CursorDot from "@/components/layout/cursorDot/cursorDot";
 import Footer from "@/components/layout/footer/footer";
+import PageTransition from "@/components/layout/pageTransition/pageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,13 +42,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <PageTransition />
+
           <CursorDot />
           <Navbar />
+
           <main className="pt-20">
             <LoaderWrapper>
               {children}
             </LoaderWrapper>
           </main>
+
           <Footer />
         </ThemeProvider>
       </body>

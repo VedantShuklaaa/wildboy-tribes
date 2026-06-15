@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 interface NavLinkProps {
 	text: string;
@@ -133,7 +134,7 @@ export function SentenceRoll({
 			animate="rest"
 			className={`relative overflow-hidden h-[1.2em] cursor-pointer ${className}`}
 		>
-			{/* Current sentence */}
+			{/* Current */}
 			<motion.div
 				variants={{
 					rest: { y: 0 },
@@ -143,12 +144,13 @@ export function SentenceRoll({
 					duration: 0.35,
 					ease: [0.76, 0, 0.24, 1],
 				}}
-				className="whitespace-nowrap"
+				className="flex items-center justify-between gap-2 whitespace-nowrap"
 			>
-				{text}
+				<span>{text}</span>
+				<ArrowUpRight size={18} />
 			</motion.div>
 
-			{/* Incoming sentence */}
+			{/* Incoming */}
 			<motion.div
 				variants={{
 					rest: { y: "100%" },
@@ -158,9 +160,10 @@ export function SentenceRoll({
 					duration: 0.35,
 					ease: [0.76, 0, 0.24, 1],
 				}}
-				className="absolute inset-0 whitespace-nowrap"
+				className="absolute inset-0 flex items-center justify-between gap-2 whitespace-nowrap"
 			>
-				{text}
+				<span>{text}</span>
+				<ArrowUpRight size={18} />
 			</motion.div>
 		</motion.div>
 	);
