@@ -5,10 +5,10 @@ import Link from "next/link";
 const navItems = [
 	{ label: "Home", href: "/" },
 	{ label: "About", href: "/about" },
-	{ label: "Work", href: "#work" },
+	{ label: "Work", href: "/work" },
 	{ label: "Services", href: "/services" },
 	{ label: "Community", href: "/href"},
-	{ label: "Contact", href: "#contact" },
+	{ label: "Contact", href: "/contact" },
 	{ label: "Blog", href: "/Blog" },
 	{ label: "Merch", href: "/merch" },
 ];

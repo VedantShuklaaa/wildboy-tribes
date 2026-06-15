@@ -4,13 +4,14 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ScrollRevealText from "@/components/scrolltriger/fillColor";
 import SlidingText from "../layout/aboutUsButton/aboutUsButton";
+import Link from "next/link";
 
 const items = [
-	"WORK",
-	"ABOUT",
-	"SERVICES",
-	"CONTACT",
-	"COMMUNITY",
+	{ label: "WORK", href: "/work" },
+	{ label: "ABOUT", href: "/about" },
+	{ label: "SERVICES", href: "/services" },
+	{ label: "CONTACT", href: "/contact" },
+	{ label: "COMMUNITY", href: "/community" },
 ];
 
 const text = "We are India's First Nightlife & Entertainment Growth Studio. We design operating systems that make venues culturally relevant, community - led, and consistently engaging.";
@@ -23,16 +24,16 @@ export default function Hero2() {
 		<div className="h-[70vh] w-full border-b border-black dark:border-zinc-600 flex" id="about">
 			<div className="h-full w-full flex flex-col relative justify-center p-4">
 				<div className="h-full w-full flex flex-col justify-center">
-					{items.map((item) => (
+					{items.map((item, idx) => (
 						<div
-							key={item}
-							onMouseEnter={() => setActive(item)}
+							key={idx}
+							onMouseEnter={() => setActive(item.label)}
 							onMouseLeave={() => setActive(null)}
 							className="relative flex items-center justify-between w-full cursor-pointer overflow-hidden px-4"
 						>
 							{/* Animated Background */}
 							<AnimatePresence>
-								{active === item && (
+								{active === item.label && (
 									<motion.div
 										className="absolute inset-0 bg-[#ff2d55] z-0 origin-left"
 										initial={{ scaleX: 0 }}
@@ -47,13 +48,13 @@ export default function Hero2() {
 							</AnimatePresence>
 
 							{/* Text */}
-							<h1 className="relative z-10 text-black dark:text-white text-6xl md:text-7xl font-medium font-twid leading-[0.9] tracking-tight py-1 ">
-								{item}
-							</h1>
+							<Link className="relative z-10 text-black dark:text-white text-6xl md:text-7xl font-medium font-twid leading-[0.9] tracking-tight py-1 " href={item.href}>
+								{item.label}
+							</Link>
 
 							{/* Arrow */}
 							<div className="relative z-20 flex items-center justify-center w-24">
-								{active === item && (
+								{active === item.label && (
 									<motion.div
 										initial={{ opacity: 0, x: -20 }}
 										animate={{ opacity: 1, x: 0 }}

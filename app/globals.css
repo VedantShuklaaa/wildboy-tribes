@@ -150,6 +150,7 @@
   --font-twid: var(--font-twid);
   /* ← add this */
   --font-onest: var(--font-onest);
+  --font-druk: var(--font-druk);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

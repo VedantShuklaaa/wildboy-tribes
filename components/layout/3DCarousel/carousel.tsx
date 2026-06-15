@@ -219,10 +219,7 @@ const text = "This is where we deploy our systems. Each space becomes a live env
 export default function carouselPage() {
 	return (
 		<div className="relative w-full font-twid" id="ai-labs">
-
-			{/* HERO */}
 			<section className="relative min-h-screen flex flex-col items-center justify-center gap-8">
-
 				<div className="absolute inset-0 pointer-events-none">
 					<OrbitBackground pivotY="30%" />
 				</div>

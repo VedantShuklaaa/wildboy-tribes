@@ -28,7 +28,7 @@ export default function BigRevealCard({
 				scale: 0.9,
 			},
 			{
-				y: 30,
+				y: 20,
 				scale: 1,
 				ease: "none",
 				scrollTrigger: {

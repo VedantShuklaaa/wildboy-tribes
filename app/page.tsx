@@ -9,8 +9,7 @@ import FeaturedProjects from "@/components/projects/faturedProjects";
 import Marquee from "@/components/marquee/marquee1";
 import ScrollCarousel from "@/components/marquee/rollerMarquee";
 import ContactUs from "@/components/contactUsCard/contactUs";
-
-
+import Services from "@/components/services/services";
 
 
 export default function HomePage() {
@@ -18,15 +17,23 @@ export default function HomePage() {
     <main className="min-h-screen bg-[background] scroll-smooth">
       <HeroText />
       <Hero2 />
-      <FeaturedWorkMarquee text="featured works©" />
+
+      <Reveal>
+        <Marquee text="featured works©" />
+      </Reveal>
       <Projects />
+      
       <FeaturedProjects />
 
       <Reveal>
         <FeaturedWorkMarquee text="@Venues" />
       </Reveal>
-
       <CarouselPage />
+
+      <Reveal>
+        <Marquee text="©Services" />
+      </Reveal>
+      <Services />
 
       <ScrollCarousel />
 
@@ -34,5 +41,4 @@ export default function HomePage() {
     </main>
   );
 }
-
 
