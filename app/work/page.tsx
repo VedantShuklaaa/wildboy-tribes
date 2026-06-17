@@ -10,7 +10,7 @@ import Works from "@/components/workPages/works";
 export default function Page() {
 
 	return (
-		<div className="bg-[background] w-full">
+		<div className="bg-[background] w-full overflow-hidden">
 			<Hero />
 
 			<Second />

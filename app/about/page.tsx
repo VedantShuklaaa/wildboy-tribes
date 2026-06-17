@@ -10,11 +10,13 @@ export default function Page() {
 	return (
 		<div className="w-full bg-[background]">
 			<div className="w-full flex flex-col items-center gap-10 justify-between bg-[#938ACF]">
-				<div className="w-full max-w-6xl flex flex-col gap-2 justify-center p-4 mt-10 leading-none">
-					<span className="text-display-md font-onest leading-none text-center font-bold text-black">THIS PAGE ISN'T ABOUT US, IT'S ABOUT YOU.</span>
+				<div className="w-full max-w-8xl flex flex-col gap-2 items-center p-4 mt-10 leading-none">
+					<span className="text-display-md leading-none text-center">
+						<h1 className="leading-none text-black font-druk">THIS PAGE ISN'T ABOUT US, IT'S ABOUT YOU.</h1>
+					</span>
 
-					<span className="max-w-8xl text-center">
-						<p className="text-body-lg font-onest leading-tight text-black">
+					<span className="max-w-4xl text-center">
+						<p className="text-body-sm md:text-body-lg font-druk text-zinc-800">
 							We are <span className="italic">not</span> vendors. We're an extension
 							of your team across brand and web.
 						</p>
@@ -26,7 +28,7 @@ export default function Page() {
 
 				</div>
 
-				<BottomDesc text1="© About Apes" text2="(CAD® — 02)" text3="Behind Us" />
+				<BottomDesc text1="© About Apes" text2="(CAD® — 02)" text3="Behind Us" className="text-black" />
 			</div>
 
 			<Reveal>
@@ -36,7 +38,9 @@ export default function Page() {
 
 			<div className="h-screen w-full flex flex-col border-b border-black dark:border-zinc-600">
 				<div className="flex flex-col p-4">
-					<span className="text-display-lg leading-none font-twid">MEET THE TEAM</span>
+					<span className="leading-none">
+						<h1 className="text-display-md font-druk">MEET THE TEAM</h1>
+					</span>
 					<span></span>
 				</div>
 				<div>

@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollRevealText from "@/components/scrolltriger/fillColor";
@@ -7,6 +7,8 @@ import SlidingText from "../aboutUsButton/aboutUsButton";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "@/components/marquee/marquee1";
 import CardStack from "../cardStack/cardStack";
+import BottomDesc from "../bottomDesc/bottomDesc";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,27 +19,34 @@ interface OrbitBackgroundProps {
 }
 
 const CARD_COUNT = 6;
-const getRadius = () => {
-	if (typeof window === "undefined") return 420;
-	const width = window.innerWidth;
 
+const ORBIT_IMAGES = [
+	"/1.png",
+	"/2.png",
+	"/3.png",
+	"/4.png",
+	"/5.png",
+	"/6.png",
+  ];
+
+const getRadius = (width: number) => {
 	// Small phones
 	if (width < 375) return 90;
 	// Large phones
-	if (width < 480) return 110;
+	if (width < 480) return 150;
 	// Landscape phones / small tablets
 	if (width < 640) return 130;
 	// Tablets
 	if (width < 768) return 150;
 	// Large tablets
-	if (width < 1024) return 220;
+	if (width < 1024) return 290;
 	// Small laptops
-	if (width < 1280) return 320;
+	if (width < 1280) return 400;
 	// Large laptops
 	if (width < 1536) return 380;
 	// Ultra-wide desktops
 	return 420;
-  };
+};
 
 export function OrbitBackground({
 	pivotX = "50%",
@@ -45,6 +54,20 @@ export function OrbitBackground({
 	className = "",
 }: OrbitBackgroundProps) {
 	const orbitRef = useRef<HTMLDivElement>(null);
+	const [radius, setRadius] = useState(420);
+
+	useEffect(() => {
+		const updateRadius = () => {
+			setRadius(getRadius(window.innerWidth));
+		};
+
+		updateRadius();
+		window.addEventListener("resize", updateRadius);
+
+		return () => {
+			window.removeEventListener("resize", updateRadius);
+		};
+	}, []);
 
 	useGSAP(() => {
 		if (!orbitRef.current) return;
@@ -128,14 +151,20 @@ export function OrbitBackground({
 					return (
 						<div
 							key={index}
-							className="absolute left-1/2 top-1/2 h-[120px] w-[180px] md:h-[180px] md:w-[280px] lg:h-[250px] lg:w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-black dark:bg-white shadow-2xl"
+							className="absolute left-1/2 top-1/2 h-[110px] w-[170px] sm:h-[120px] sm:w-[200px] md:h-[180px] md:w-[280px] lg:h-[250px] lg:w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-black dark:bg-white shadow-2xl"
 							style={{
-								transform: `rotateY(${angle}deg) translateZ(${getRadius()}px)`,
+								transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
 							}}
 						>
 							<div className="flex h-full w-full items-center justify-center">
 								<span className="text-2xl md:text-4xl lg:text-6xl font-bold text-white dark:text-black">
-									{index + 1}
+									<Image
+										src={ORBIT_IMAGES[index]}
+										alt="NAH"
+										fill
+										className="object-cover"
+										sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+									/>
 								</span>
 							</div>
 						</div>
@@ -145,7 +174,6 @@ export function OrbitBackground({
 		</div>
 	);
 }
-
 
 
 const text = "This is where we deploy our systems. Each space becomes a live environment where we test potential, apply operational expertise, and refine performance in real time. From unlocking venue potential to experimenting with new models, business architecture, and growth strategies, everything is built to drive relevance, consistency, and demand. If it doesn’t perform, it doesn’t stay.";
@@ -161,7 +189,7 @@ export default function carouselPage() {
 				<div className="relative z-10 w-[90vw] md:w-[70vw] lg:w-[45vw] text-center mt-55 lg:mt-100">
 					<ScrollRevealText
 						text={text}
-						className="text-xl md:text-3xl lg:text-4xl"
+						className="text-heading-lg"
 					/>
 				</div>
 
@@ -179,12 +207,7 @@ export default function carouselPage() {
 			{/* STACK SECTION */}
 			<CardStack />
 
-			{/* EXTRA CONTENT AFTER STACK */}
-			<section className="min-h-[12vh] lg:h-[20vh] w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 px-4 py-4 text-sm md:text-lg lg:text-2xl text-black dark:text-zinc-400 border-b border-black dark:border-zinc-600">
-				<span>© Clients</span>
-				<span>(CAD® — 06)</span>
-				<span>Brand Partners</span>
-			</section>
+			<BottomDesc text1="© Clients" text2="(CAD® — 06)" text3="Brand Partners" />
 		</div>
 
 	)

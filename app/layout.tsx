@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { drukWide, onest, twidGrotesk } from "@/fonts/fonts";
+import { dagestan, drukWide, onest, twidGrotesk } from "@/fonts/fonts";
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/layout/navbar/navbar";
 import { LoaderWrapper } from "@/components/layout/loader/loader";
@@ -42,7 +42,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${onest.variable} ${twidGrotesk.variable} ${drukWide.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${onest.variable} ${twidGrotesk.variable} ${drukWide.variable} ${dagestan.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider

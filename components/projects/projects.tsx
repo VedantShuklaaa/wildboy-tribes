@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,26 +10,32 @@ const projects = [
 	{
 		title: "Groww",
 		description: "Launch Video Campaign",
+		src: "/1.png"
 	},
 	{
 		title: "Cult",
 		description: "Smartwatch Launch Video",
+		src: "/2.png"
 	},
 	{
 		title: "Arovalis",
 		description: "Brand Identity Design",
+		src: "/3.png"
 	},
 	{
 		title: "Pure Project",
 		description: "Brand Identity & Packaging Design",
+		src: "/4.png"
 	},
 	{
 		title: "Slice",
 		description: "Feature Launch Commercial",
+		src: "/5.png"
 	},
 	{
 		title: "MadDrop",
 		description: "Website Design & Development",
+		src: "/6.png"
 	},
 ];
 
@@ -75,7 +82,15 @@ export default function Projects() {
 						</div>
 
 						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-							<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl" />
+							<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl" >
+								<Image
+									src={project.src}
+									alt={project.title}
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+								/>
+							</div>
 						</div>
 					</div>
 				))}
@@ -97,7 +112,15 @@ export default function Projects() {
 					</div>
 
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-						<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl" />
+						<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl">
+							<Image
+								src="/AQUA_RUMBLE.png"
+								alt="NAH"
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+							/>
+						</div>
 					</div>
 				</div>
 
@@ -114,7 +137,15 @@ export default function Projects() {
 					</div>
 
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-						<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl" />
+						<div className="project-card h-[300px] md:h-[450px] lg:h-[550px] w-full bg-black dark:bg-white rounded-xl">
+							<Image
+								src="/KITTY&CHAOS.png"
+								alt="NAH"
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+							/>
+						</div>
 					</div>
 				</div>
 

@@ -47,22 +47,27 @@ export default function CardStack() {
 	const sectionRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
-		if (window.innerWidth < 1024) return;
-		const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
+		const stackCards = gsap.utils.toArray<HTMLElement>(".stack-card");
 
-		cards.forEach((card, i) => {
+		stackCards.forEach((card, i) => {
 			if (i === 0) return;
 
 			gsap.set(card, {
 				yPercent: 120,
+				autoAlpha: 1,
 			});
+		});
+
+		gsap.set(stackCards[0], {
+			yPercent: 0,
+			autoAlpha: 1,
 		});
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: sectionRef.current,
 				start: "top top",
-				end: () => `+=${window.innerHeight * cards.length}`,
+				end: () => `+=${window.innerHeight * stackCards.length}`,
 				pin: true,
 				scrub: 1.5,
 				anticipatePin: 1,
@@ -70,18 +75,23 @@ export default function CardStack() {
 			},
 		});
 
-		cards.forEach((card, i) => {
+		stackCards.forEach((card, i) => {
 			if (i === 0) return;
 
-			tl.to(card, {
-				yPercent: 0,
-				duration: 1,
-				ease: "none",
-			});
+			tl.to(
+				card,
+				{
+					yPercent: 0,
+					duration: 1,
+					ease: "none",
+				},
+				">"
+			);
 		});
 
 		ScrollTrigger.refresh();
 	}, { scope: sectionRef, dependencies: [] });
+
 
 	return (
 		<section
@@ -96,30 +106,32 @@ export default function CardStack() {
 						zIndex: idx - 1,
 					}}
 				>
-					<div className={`stack-card h-screen w-screen flex items-center justify-center font-twid text-[150px] font-bold text-white ${card.color}`}>
-						<div className="h-full w-full flex flex-col justify-between p-10">
+					<div className={`stack-card h-screen w-screen flex flex-col sm:flex-row items-center justify-center font-twid font-bold text-white ${card.color}`}>
+						<div className="py-4 px-10 md:h-full w-full flex flex-col justify-between md:p-10">
 							<div className="flex flex-col gap-4 leading-none">
 								<span className="h-10 w-10 rounded-full border border-white flex items-center justify-center text-xl">{idx + 1}</span>
-								<span className={`text-2xl w-[40vw] font-light ${card.color == "bg-black" ? `text-white` : `text-black`}`}>{card.description}</span>
+								<span className={`text-body-sm md:text-body-lg 2xl:text-heading-lg md:w-[40vw] font-light ${card.color == "bg-black" ? `text-white` : `text-black`}`}>{card.description}</span>
 							</div>
-							<span className={`${card.color === "bg-black" ? "text-white" : `text-black`}`}>{card.title}</span>
+							<span className={`text-display-md ${card.color === "bg-black" ? "text-white" : `text-black`}`}>{card.title}</span>
 						</div>
-						<TiltCard
-							className="h-[800px] w-[800px] right-20"
-							cardClassName={card.cardColor}
-							tilt={card.tilt}
-						>
-							<div className="relative h-full w-full overflow-hidden">
-								<Image
-									src={card.src}
-									alt={card.title}
-									fill
-									quality={100}
-									className="object-cover"
-									sizes="800px"
-								/>
-							</div>
-						</TiltCard>
+						<div className="h-full w-full flex items-center justify-center md:justify-start">
+							<TiltCard
+								className="h-[400px] w-[300px] md:h-[500px] md:w-[340px] lg:h-[600px] lg:w-[450px] xl:h-[600px] xl:w-[550px] 2xl:h-[800px] 2xl:w-[750px]"
+								cardClassName={card.cardColor}
+								tilt={card.tilt}
+							>
+								<div className="relative h-full w-full overflow-hidden">
+									<Image
+										src={card.src}
+										alt={card.title}
+										fill
+										quality={100}
+										className="object-cover"
+										sizes="800px"
+									/>
+								</div>
+							</TiltCard>
+						</div>
 					</div>
 				</div>
 			))}

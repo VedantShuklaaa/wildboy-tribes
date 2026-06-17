@@ -14,17 +14,17 @@ export default function Second() {
 			<div className="absolute bottom-0 w-full h-30 bg-gradient-to-t from-zinc-400 to-transparent" />
 			<VerticalMarquee className="w-[650px]">
 				<div className="flex flex-col gap-2">
-					<p className="text-black text-center text-4xl font-twid">
+					<p className="text-black text-center text-body-lg font-twid">
 						Our work goes beyond promotion — we build and operate venues with a
 						clear sense of ownership and intent.
 					</p>
 
-					<p className="text-black text-center text-4xl font-twid">
+					<p className="text-black text-center text-body-lg font-twid">
 						We approach each project as a complete system, shaping everything
 						from brand to operations to ensure it performs at the highest level.
 					</p>
 
-					<p className="text-black text-center text-4xl font-twid">
+					<p className="text-black text-center text-body-lg font-twid">
 						Rather than focusing on isolated pieces, we bring everything
 						together — creating venues that are cohesive, enduring, and built
 						to lead in their market.
@@ -34,7 +34,7 @@ export default function Second() {
 
 			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-black">
 				<span className="leading-none">
-					<p className="text-center text-[200px] font-onest font-bold tracking-tighter">DESIGN ENGINEERING STRATEGY</p>
+					<p className="text-center text-display-lg sm:text-display-xl font-onest font-bold tracking-tighter">DESIGN ENGINEERING STRATEGY</p>
 				</span>
 			</div>
 		</div>
@@ -82,7 +82,7 @@ export function VerticalMarquee({
 	return (
 		<div
 			ref={containerRef}
-			className={`relative h-screen overflow-hidden pointer-events-none ${className}`}
+			className={`relative h-screen overflow-hidden pointer-events-none blur-sm ${className}`}
 		>
 			<div
 				ref={trackRef}

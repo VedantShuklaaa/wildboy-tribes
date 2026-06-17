@@ -14,25 +14,22 @@ export default function Works() {
 		cardsRef.current.forEach((card) => {
 			if (!card) return;
 
-			gsap.fromTo(
-				card,
-				{
-					opacity: 0,
-					scale: 0.9,
-					y: 50,
+			gsap.fromTo(card, {
+				opacity: 0,
+				scale: 0.9,
+				y: 50,
+			}, {
+				opacity: 1,
+				scale: 1,
+				y: 0,
+				duration: 1,
+				ease: "power3.out",
+				scrollTrigger: {
+					trigger: card,
+					start: "top 85%",
+					toggleActions: "play none none reverse",
 				},
-				{
-					opacity: 1,
-					scale: 1,
-					y: 0,
-					duration: 1,
-					ease: "power3.out",
-					scrollTrigger: {
-						trigger: card,
-						start: "top 85%",
-						toggleActions: "play none none reverse",
-					},
-				}
+			}
 			);
 		});
 	}, { scope: containerRef, dependencies: [] });
@@ -44,19 +41,30 @@ export default function Works() {
 					href={`/work/${items.slug}`}
 				>
 					<div
-						className="h-[60vh] w-full border flex"
+						className=" flex flex-col lg:flex-row w-full border overflow-hidden min-h-[300px] lg:h-[500px] xl:h-[500px]"
 						ref={(el) => {
 							cardsRef.current[idx] = el;
 						}}
 					>
-						<div className="h-full w-full bg-black">
+						{/* Image Section */}
+						<div className="w-full lg:w-1/2 aspect-[16/10] lg:aspect-auto bg-black" />
 
-						</div>
-						<div className="h-full w-full flex flex-col p-4">
-							<div className="h-[90%] w-full flex items-center justify-center text-7xl">{items.title}</div>
-							<div className="h-[10%] w-full flex flex-col">
-								<span className="text-2xl">{items.description}</span>
-								<span className="text-black dark:text-zinc-400">Bengaluru, India</span>
+						{/* Content Section */}
+						<div className="flex flex-col justify-between w-full lg:w-1/2 p-6 md:p-8 lg:p-10 gap-6">
+							<div className=" flex-1 flex items-center">
+								<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none break-words">
+									{items.title}
+								</h2>
+							</div>
+
+							<div className="flex flex-col gap-1">
+								<span className=" text-base sm:text-lg md:text-xl">
+									{items.description}
+								</span>
+
+								<span className=" text-sm md:text-base text-black dark:text-zinc-400" >
+									Bengaluru, India
+								</span>
 							</div>
 						</div>
 					</div>

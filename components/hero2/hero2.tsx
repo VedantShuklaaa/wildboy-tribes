@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ScrollRevealText from "@/components/scrolltriger/fillColor";
 import SlidingText from "../layout/aboutUsButton/aboutUsButton";
 import Link from "next/link";
+import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 const items = [
 	{ label: "WORK", href: "/work" },
@@ -97,12 +98,7 @@ export default function Hero2() {
 				</div>
 			</div>
 
-			{/* Bottom Bar */}
-			<div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-4 py-3 text-sm md:text-base lg:text-lg font-[300] text-black dark:text-zinc-400">
-				<span>© Featured Projects</span>
-				<span>(CAD® — 03)</span>
-				<span>Digital Showcase</span>
-			</div>
+			<BottomDesc text1="© Featured Projects" text2="(CAD® — 03)" text3="Digital Showcase" />
 		</div>
 	)
 }

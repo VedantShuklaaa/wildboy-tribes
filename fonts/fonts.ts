@@ -15,3 +15,8 @@ export const drukWide = localFont({
   variable: "--font-druk",
 });
 
+export const dagestan = localFont({
+  src: "./DagestaN.ttf",
+  variable: "--font-dage",
+});
+

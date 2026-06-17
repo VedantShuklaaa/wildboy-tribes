@@ -15,7 +15,7 @@ export default function FloatCard() {
 			</FloatingCard>
 
 			<div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
-				<ScrollRevealText text={text} className="text-display-sm w-[80vw] 2xl:w-240 border leading-none" />
+				<ScrollRevealText text={text} className="text-display-sm w-[80vw] 2xl:w-240 leading-none" />
 			</div>
 
 			<FloatingCard
