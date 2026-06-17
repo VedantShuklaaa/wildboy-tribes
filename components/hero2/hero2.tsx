@@ -21,76 +21,87 @@ export default function Hero2() {
 	const [active, setActive] = useState<string | null>(null);
 
 	return (
-		<div className="h-[70vh] w-full border-b border-black dark:border-zinc-600 flex" id="about">
-			<div className="h-full w-full flex flex-col relative justify-center p-4">
-				<div className="h-full w-full flex flex-col justify-center">
-					{items.map((item, idx) => (
-						<div
-							key={idx}
-							onMouseEnter={() => setActive(item.label)}
-							onMouseLeave={() => setActive(null)}
-							className="relative flex items-center justify-between w-full cursor-pointer overflow-hidden px-4"
-						>
-							{/* Animated Background */}
-							<AnimatePresence>
-								{active === item.label && (
-									<motion.div
-										className="absolute inset-0 bg-[#ff2d55] z-0 origin-left"
-										initial={{ scaleX: 0 }}
-										animate={{ scaleX: 1 }}
-										exit={{ scaleX: 0 }}
-										transition={{
-											duration: 0.4,
-											ease: [0.76, 0, 0.24, 1],
-										}}
-									/>
-								)}
-							</AnimatePresence>
-
-							{/* Text */}
-							<Link className="relative z-10 text-black dark:text-white text-6xl md:text-7xl font-medium font-twid leading-[0.9] tracking-tight py-1 " href={item.href}>
-								{item.label}
-							</Link>
-
-							{/* Arrow */}
-							<div className="relative z-20 flex items-center justify-center w-24">
-								{active === item.label && (
-									<motion.div
-										initial={{ opacity: 0, x: -20 }}
-										animate={{ opacity: 1, x: 0 }}
-										exit={{ opacity: 0, x: -20 }}
-										transition={{
-											duration: 0.25,
-										}}
-									>
-										<ArrowRight
-											size={80}
-											strokeWidth={1.5}
-											className="text-white"
+		<div
+			className="min-h-[70vh] w-full border-b border-black dark:border-zinc-600 flex flex-col"
+			id="about"
+		>
+			<div className="flex flex-col lg:flex-row flex-1">
+				{/* Left */}
+				<div className="w-full lg:w-1/2 flex flex-col relative justify-center p-4">
+					<div className="flex flex-col justify-center flex-1">
+						{items.map((item, idx) => (
+							<div
+								key={idx}
+								onMouseEnter={() => setActive(item.label)}
+								onMouseLeave={() => setActive(null)}
+								className="relative flex items-center justify-between w-full cursor-pointer overflow-hidden px-2 lg:px-4"
+							>
+								<AnimatePresence>
+									{active === item.label && (
+										<motion.div
+											className="absolute inset-0 bg-[#ff2d55] z-0 origin-left"
+											initial={{ scaleX: 0 }}
+											animate={{ scaleX: 1 }}
+											exit={{ scaleX: 0 }}
+											transition={{
+												duration: 0.4,
+												ease: [0.76, 0, 0.24, 1],
+											}}
 										/>
-									</motion.div>
-								)}
-							</div>
-						</div>
-					))}
-				</div>
-				<span className="text-lg font-twid font-[300] text-black dark:text-zinc-400">© Featured Projects</span>
-			</div>
-			<div className="h-full w-full flex flex-col items-start justify-between p-4">
-				<div />
+									)}
+								</AnimatePresence>
 
-				<div className="flex flex-col gap-4">
-					<ScrollRevealText text={text} className="text-4xl" />
-					<div className="group relative w-fit h-10 px-5 border-2 rounded-xl border-black dark:border-white flex items-center justify-center overflow-hidden">
-						<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
-						<span className="relative z-10"><SlidingText text="ABOUT US" /></span>
+								<Link
+									href={item.href}
+									className="relative z-10 text-black dark:text-white font-medium font-twid leading-[0.9] tracking-tight py-1 text-3xl md:text-5xl lg:text-6xl xl:text-7xl"
+								>
+									{item.label}
+								</Link>
+
+								<div className="relative z-20 flex items-center justify-center w-10 md:w-16 lg:w-24">
+									{active === item.label && (
+										<motion.div
+											initial={{ opacity: 0, x: -20 }}
+											animate={{ opacity: 1, x: 0 }}
+											exit={{ opacity: 0, x: -20 }}
+											transition={{ duration: 0.25 }}
+										>
+											<ArrowRight
+												strokeWidth={1.5}
+												className="h-8 w-8 md:h-12 md:w-12 lg:h-20 lg:w-20 text-white"
+											/>
+										</motion.div>
+									)}
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 
-				<div className="w-full text-lg flex items-center justify-between font-[300] text-black dark:text-zinc-400">
-					<span>(CAD® — 03)</span>
-					<span>Digital Showcase</span>
+				{/* Right */}
+				<div className="w-full lg:w-1/2 flex flex-col items-start justify-center p-4 py-8">
+					<div className="flex flex-col gap-4">
+						<ScrollRevealText
+							text={text}
+							className="text-xl md:text-3xl lg:text-4xl"
+						/>
+
+						<div className="group relative w-fit h-10 px-5 border-2 rounded-xl border-black dark:border-white flex items-center justify-center overflow-hidden">
+							<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
+
+							<span className="relative z-10">
+								<SlidingText text="ABOUT US" />
+							</span>
+						</div>
+					</div>
 				</div>
+			</div>
+
+			{/* Bottom Bar */}
+			<div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-4 py-3 text-sm md:text-base lg:text-lg font-[300] text-black dark:text-zinc-400">
+				<span>© Featured Projects</span>
+				<span>(CAD® — 03)</span>
+				<span>Digital Showcase</span>
 			</div>
 		</div>
 	)

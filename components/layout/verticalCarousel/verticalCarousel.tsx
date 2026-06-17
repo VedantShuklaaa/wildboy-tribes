@@ -122,7 +122,7 @@ export function ProcessCardRight() {
 			<div className="flex justify-end px-6 py-24">
 				<div
 					ref={stageRef}
-					className="relative w-[50vw]"
+					className="relative w-full"
 					style={{ height: STEPS.length * (EXPANDED_H + GAP) }}
 				>
 					{STEPS.map((step, i) => (
@@ -143,24 +143,17 @@ export function ProcessCardRight() {
 									: "0 -10px 30px -20px rgba(225, 244, 220, 0.6)",
 							}}
 						>
-							<div className="grid grid-cols-[80px_1fr] gap-6 px-8 h-full items-start pt-6">
-								<span
-									className={`text-sm pt-2 ${step.green ? "text-black/60" : "text-white/40"
-										}`}
-								>
+							<div className="grid grid-cols-1 md:px-8 h-full items-start">
+								<span className={`text-sm p-2 ${step.green ? "text-black/60" : "text-white/40"}`}>
 									{step.green ? "☺" : step.num}
 								</span>
-								<div className="pr-8">
+								<div className="px-2">
 									<h3
-										className="font-medium tracking-tight"
-										style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+										className="font-medium tracking-tight text-heading-xl"
 									>
 										{step.title}
 									</h3>
-									<p
-										className={`card-desc mt-4 max-w-xl leading-relaxed ${step.green ? "text-black/70" : "text-white/55"
-											}`}
-									>
+									<p className={`card-desc mt-4 max-w-5xl leading-relaxed ${step.green ? "text-black/70" : "text-white/55"}`} >
 										{step.description}
 									</p>
 								</div>
@@ -175,8 +168,8 @@ export function ProcessCardRight() {
 
 export default function ProcessCardLeft() {
 	return (
-		<div className="w-[30vw] flex flex-col gap-6 px-6 py-24">
-			<span className="text-4xl font-twid">
+		<div className="w-full flex flex-col gap-6 px-6 py-24 leading-none">
+			<span className="text-heading-xl font-twid">
 				Our process is built to move fast,
 				stay flexible, and keep you involved.
 				We don’t overcomplicate.

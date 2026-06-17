@@ -7,13 +7,13 @@ import Links from "@/components/workPages/links";
 export default function Page() {
 	return (
 		<div className="bg-[background] w-full">
-			<div className="h-[80vh] w-full flex flex-col items-center justify-center bg-pink-200 gap-20">
-				<span className="leading-none w-[80%]">
-					<h1 className="text-[170px] tracking-tighter text-black text-center font-bold font-druk">IT STARTS WITH A CONVERSATION</h1>
+			<div className="py-5 w-full flex flex-col items-center justify-center bg-pink-200 gap-4 md:gap-20 leading-none">
+				<span className="leading-none">
+					<h1 className="text-display-lg tracking-tighter text-black text-center font-bold font-druk">IT STARTS WITH A CONVERSATION</h1>
 				</span>
 
-				<span className="w-[35vw]">
-					<p className="text-black text-2xl text-center font-twid">If you're considering working together, this is the right place to start. Every message is read by a partner.</p>
+				<span className="px-2 md:px-20 lg:px-50 2xl:px-110">
+					<p className="text-black text-heading-lg text-center font-twid">If you're considering working together, this is the right place to start. Every message is read by a partner.</p>
 				</span>
 			</div>
 

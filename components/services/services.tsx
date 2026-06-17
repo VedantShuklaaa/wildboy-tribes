@@ -80,24 +80,46 @@ const data: Data[] = [
 ]
 
 
-
 export default function Services() {
 	return (
-		<div className="flex flex-col font-twid h-[180vh]">
-			{data.map((items, idx) => (
-				<div className="h-full w-full flex flex-col justify-center border-b border-black dark:border-zinc-600" key={idx}>
-					<div className="flex flex-col p-4 gap-6">
-						<div className="flex flex-col gap-1">
-							<span className="text-7xl">{items.title}</span>
-							<span className="text-xl text-zinc-400">{items.subHeading}</span>
+		<div className="flex flex-col font-twid">
+			{data.map((item, idx) => (
+				<div
+					key={idx}
+					className="w-full border-b border-black dark:border-zinc-600"
+				>
+					<div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8 py-10 lg:py-16">
+
+						{/* Heading */}
+						<div className="flex flex-col gap-2">
+							<span className="text-3xl md:text-5xl lg:text-7xl leading-none">
+								{item.title}
+							</span>
+
+							<span className="text-sm md:text-lg lg:text-xl text-zinc-400 tracking-wide">
+								{item.subHeading}
+							</span>
 						</div>
-						<span className="text-lg text-zinc-400 w-[40vw]">{items.description}</span>
-						<span className="flex gap-4">{items.bullets.map((items, idx) => (
-							<span className="text-xl font-bold" key={idx}>{items.bulletPoints}</span>
-						))}</span>
+
+						{/* Description */}
+						<span className="w-full lg:w-[40vw] text-base md:text-lg text-zinc-400 leading-relaxed">
+							{item.description}
+						</span>
+
+						{/* Bullets */}
+						<div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
+							{item.bullets.map((bullet, bulletIdx) => (
+								<span
+									key={bulletIdx}
+									className="text-sm md:text-lg lg:text-xl font-bold border border-current rounded-full px-3 py-1"
+								>
+									{bullet.bulletPoints}
+								</span>
+							))}
+						</div>
 					</div>
 				</div>
 			))}
 		</div>
-	)
+	);
 }

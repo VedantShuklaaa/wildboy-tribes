@@ -2,7 +2,6 @@
 import HeroText from "@/components/hero/heroText";
 import Hero2 from "@/components/hero2/hero2";
 import CarouselPage from "@/components/layout/3DCarousel/carousel";
-import FeaturedWorkMarquee from "@/components/marquee/marquee1";
 import Reveal from "@/components/marquee/reveal";
 import Projects from "@/components/projects/projects";
 import FeaturedProjects from "@/components/projects/featuredProjects";
@@ -29,7 +28,7 @@ export default function HomePage() {
       <FeaturedProjects />
 
       <Reveal>
-        <FeaturedWorkMarquee text="@Venues" />
+        <Marquee text="@Venues" />
       </Reveal>
       <CarouselPage />
 

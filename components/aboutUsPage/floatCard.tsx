@@ -6,21 +6,21 @@ const text = "We’re India’s first nightlife architects and management studio
 
 export default function FloatCard() {
 	return (
-		<div className="relative h-[100vh] w-full font-twid">
+		<div className="relative h-screen w-full font-twid">
 			<FloatingCard
 				y={100}
-				className="absolute top-50 left-40"
+				className="absolute top-10 lg:top-50 lg:left-40 hidden lg:flex"
 			>
 				<div className="h-160 w-80 rounded-3xl border border-black dark:border-zinc-600" />
 			</FloatingCard>
 
-			<div className="absolute left-1/2 -translate-x-1/2 top-20">
-				<ScrollRevealText text={text} className="text-6xl w-240" />
+			<div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+				<ScrollRevealText text={text} className="text-display-sm w-[80vw] 2xl:w-240 border leading-none" />
 			</div>
 
 			<FloatingCard
 				y={100}
-				className="absolute top-20 right-30"
+				className="absolute top-20 right-30 hidden lg:flex"
 			>
 				<div className="h-150 w-100 rounded-3xl border border-black dark:border-zinc-600" />
 			</FloatingCard>

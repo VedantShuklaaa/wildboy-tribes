@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { flushSync } from "react-dom";
@@ -13,27 +13,42 @@ export default function Loader({ onComplete }: LoaderProps) {
 	const textRef = useRef<HTMLDivElement>(null);
 	const bgRef = useRef<HTMLDivElement>(null);
 
-	useGSAP(() => {
-		// timeline must be inside useGSAP
-		const tl = gsap.timeline({ onComplete });
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			console.log("Loader fallback triggered");
+			onComplete?.();
+		}, 5000);
+		return () => clearTimeout(timer);
+	}, [onComplete]);
 
-		tl.fromTo(
-			textRef.current,
-			{ y: "-100vh", opacity: 1 },
-			{ y: "0vh", duration: 1.5, ease: "power3.out" }
-		)
-			.to(textRef.current, {
-				y: "26.5vh",
-				fontSize: "6vw",
-				duration: 2,
-				ease: "power3.inOut",
-			})
-			.to(bgRef.current, {
-				opacity: 0,
-				duration: 0.8,
-				ease: "power2.inOut",
-				pointerEvents: "none",
-			});
+	useGSAP(() => {
+		const isMobile = window.innerWidth < 768;
+
+		const tl = gsap.timeline();
+
+		tl.fromTo(textRef.current, {
+			y: "-100vh",
+			opacity: 1,
+		}, {
+			y: 0,
+			duration: 1.5,
+			ease: "power3.out",
+		}).to(textRef.current, {
+			y: isMobile ? "22vh" : "26vh",
+			scale: isMobile ? 1.5 : 2,
+			duration: 2,
+			ease: "power3.inOut",
+		}).to([bgRef.current, textRef.current], {
+			autoAlpha: 0,
+			duration: 0.8,
+			ease: "power2.inOut",
+			onComplete: () => {
+				console.log("loader complete");
+				onComplete?.();
+			},
+		});
+
+		return () => tl.kill();
 	}, { scope: loaderRef, dependencies: [] });
 
 	return (
@@ -44,7 +59,7 @@ export default function Loader({ onComplete }: LoaderProps) {
 			<div ref={bgRef} className="absolute inset-0 bg-background" />
 			<div
 				ref={textRef}
-				className="relative z-10 text-white text-3xl font-twid font-medium whitespace-nowrap flex flex-col text-center leading-none"
+				className="relative max-w-[90vw] z-10 text-white text-xl sm:text-2xl md:text-3xl font-twid font-medium flex flex-col text-center leading-none"
 			>
 				<span>WILDBOYS TRIBE</span>
 				<span>NIGHTLIFE & ENTERTAINMENT</span>
@@ -62,7 +77,7 @@ export function LoaderWrapper({ children }: { children: React.ReactNode }) {
 			{!loaded && (
 				<Loader
 					onComplete={() => {
-						flushSync(() => setLoaded(true));
+						setLoaded(true);
 					}}
 				/>
 			)}

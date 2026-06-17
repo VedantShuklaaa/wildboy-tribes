@@ -166,6 +166,87 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+
+  /* ==========================================
+     TYPOGRAPHY
+  ========================================== */
+
+  --text-display-2xl: clamp(5rem, 18vw, 22rem);
+  --text-display-xl: clamp(4rem, 12vw, 14rem);
+  --text-display-lg: clamp(3rem, 8vw, 8.5rem);
+  --text-display-md: clamp(2.5rem, 6vw, 5.25rem);
+  --text-display-sm: clamp(2rem, 4vw, 3.25rem);
+
+  --text-heading-xl: clamp(1.75rem, 3vw, 2rem);
+  --text-heading-lg: clamp(1.25rem, 2vw, 1.5rem);
+
+  --text-body-lg: 1.25rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+
+  /* ==========================================
+     SPACING
+  ========================================== */
+
+  --spacing-2xs: 0.25rem;
+  /* 4px */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 0.75rem;
+  /* 12px */
+  --spacing-md: 1.25rem;
+  /* 20px */
+  --spacing-lg: 2rem;
+  /* 32px */
+  --spacing-xl: 3.25rem;
+  /* 52px */
+  --spacing-2xl: 5.25rem;
+  /* 84px */
+  --spacing-3xl: 8.5rem;
+  /* 136px */
+
+  /* ==========================================
+     WIDTHS
+  ========================================== */
+
+  --container-xs: 20rem;
+  /* 320px */
+  --container-sm: 24rem;
+  /* 384px */
+  --container-md: 28rem;
+  /* 448px */
+  --container-lg: 32rem;
+  /* 512px */
+  --container-xl: 36rem;
+  /* 576px */
+  --container-2xl: 42rem;
+  /* 672px */
+  --container-4xl: 56rem;
+  /* 896px */
+  --container-6xl: 72rem;
+  /* 1152px */
+  --container-7xl: 80rem;
+  /* 1280px */
+
+  /* ==========================================
+     HEIGHTS
+  ========================================== */
+
+  --height-navbar: 5rem;
+  /* 80px */
+  --height-card-sm: 12rem;
+  /* 192px */
+  --height-card-md: 20rem;
+  /* 320px */
+  --height-card-lg: 32rem;
+  /* 512px */
+  --height-card-xl: 44rem;
+  /* 704px */
+
+  --height-section-sm: 50vh;
+  --height-section-md: 70vh;
+  --height-section-lg: 100vh;
+  --height-section-xl: 150vh;
 }
 
 @layer base {
@@ -175,10 +256,28 @@
 
   body {
     @apply bg-background text-foreground;
+    /* prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+
+  /* disable heavy animations on mobile */
+  @media (max-width: 768px) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0s !important;
+    }
+  }
+
+  /* respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }
 
 .backface-hidden {
-	backface-visibility: hidden;
-	transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }

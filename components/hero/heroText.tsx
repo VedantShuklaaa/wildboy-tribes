@@ -6,25 +6,30 @@ const words = ["CULTURE.", "COMMUNITY.", "CONSISTENCY."];
 
 export default function HeroText() {
 	return (
-		<div className="flex flex-col items-between justify-center " id="top">
-			<div className="h-[50vh] border-b border-black dark:border-zinc-700 flex items-end justify-between py-7 px-7">
-				<div className="h-[45vh] w-[45vw] text-6xl font-twid font-[500] flex flex-col">
+		<div className="flex flex-col" id="top">
+			{/* Hero */}
+			<div className="min-h-[50vh] lg:h-[50vh] border-b border-black dark:border-zinc-700 flex flex-col lg:flex-row items-end justify-between px-4 py-7 lg:px-7 gap-6 lg:gap-0">
+
+				<div className="w-full lg:w-[45vw] lg:h-[45vh] flex flex-col font-twid font-medium text-3xl md:text-5xl lg:text-6xl leading-none">
 					<span>FROM EMPTY SPACES</span>
-					<span>TO HIGH-DEMAND DESINATIONS</span>
+					<span>TO HIGH-DEMAND DESTINATIONS</span>
 					<span>WE ARCHITECT</span>
 					<RotatingText />
 				</div>
-				<div className="h-[45vh] w-[25vw] border rounded-xl bg-black dark:bg-white"></div>
+
+				<div className="h-[30vh] w-full md:h-[35vh] lg:h-[45vh] lg:w-[25vw] border rounded-xl bg-black dark:bg-white" />
 			</div>
 
-			<div className="h-[35vh] w-full border-b border-black dark:border-zinc-600 flex items-center justify-center">
-				<span className="text-[6vw] font-twid font-[500] leading-none text-center flex flex-col">
+			{/* Main Heading */}
+			<div className="min-h-[20vh] lg:h-[35vh] w-full border-b border-black dark:border-zinc-600 flex items-center justify-center px-4 py-8 lg:py-0">
+				<span className="flex flex-col text-center font-twid font-medium leading-none text-3xl md:text-5xl lg:text-[6vw]">
 					<span>WILDBOYS TRIBE</span>
 					<span>NIGHTLIFE & ENTERTAINMENT ARCHITECTS</span>
 				</span>
 			</div>
 
-			<div className="h-[6vh] w-full border-b border-black dark:border-zinc-600 text-lg flex items-end justify-between px-7 py-2 text-black dark:text-zinc-400 font-twid">
+			{/* Footer */}
+			<div className="min-h-[6vh] w-full border-b border-black dark:border-zinc-600 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 px-4 lg:px-7 py-2 font-twid text-sm md:text-base lg:text-lg text-black dark:text-zinc-400">
 				<span>Powered by AI-enhanced workflows</span>
 				<span>Pune, Bangalore - India</span>
 			</div>

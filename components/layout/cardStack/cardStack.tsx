@@ -43,13 +43,11 @@ const cards = [
 	},
 ];
 
-
-
-
 export default function CardStack() {
 	const sectionRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
+		if (window.innerWidth < 1024) return;
 		const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
 
 		cards.forEach((card, i) => {
@@ -80,8 +78,6 @@ export default function CardStack() {
 				duration: 1,
 				ease: "none",
 			});
-
-
 		});
 
 		ScrollTrigger.refresh();

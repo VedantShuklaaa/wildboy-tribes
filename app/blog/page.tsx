@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 export default function Page() {
 	return (
 		<div className="w-full bg-[background]">
-			<div className="h-[80vh] w-full flex flex-col items-center pt-10 font-twid leading-none bg-purple-300 text-black">
-				<span className="text-[200px] tracking-tight">BLOGS</span>
-				<span className="text-xl text-zinc-600">Expert perspectives, industry trends, and practical wisdom.</span>
+			<div className="py-10 w-full flex flex-col items-center gap-10 pt-10 font-twid bg-purple-300 text-black">
+				<div className=" flex flex-col items-center leading-none">
+					<span className="text-display-lg tracking-tight">BLOGS</span>
+					<span className="text-xl text-zinc-600">Expert perspectives, industry trends, and practical wisdom.</span>
+				</div>
 
 				<Skiper49 />
 			</div>
@@ -17,7 +19,7 @@ export default function Page() {
 				{blogs.map((items, idx) => (
 					<motion.div
 						key={idx}
-						className="h-[25vh] w-full flex"
+						className="h-[30vh] lg:h-[20vh] w-full flex flex-col md:flex-row"
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
 						initial={{ opacity: 0, y: 120 }}
@@ -27,18 +29,18 @@ export default function Page() {
 							ease: [0.16, 1, 0.3, 1],
 						}}
 					>
-						<div className="h-full w-[15%] border border-black dark:border-zinc-600" />
+						<div className="h-full w-[30%] lg:w-[15%] border border-black dark:border-zinc-600 hidden md:flex" />
 
-						<div className="h-full w-[80%] p-4 flex flex-col gap-2">
-							<span className="text-zinc-400 text-xl">
+						<div className=" lg:h-full w-full p-4 flex flex-col gap-2">
+							<span className="text-zinc-400 text-body-sm xl:text-body-md">
 								{items.date}
 							</span>
 
-							<span className="text-4xl">
+							<span className="lg:text-body-lg 2xl:text-heading-lg">
 								{items.title}
 							</span>
 
-							<span className="text-2xl text-zinc-500 h-full w-[50%]">
+							<span className="text-body-sm 2xl:text-body-lg text-zinc-500 h-full lg:w-[70%] xl:w-[50%]">
 								{items.description}
 							</span>
 						</div>

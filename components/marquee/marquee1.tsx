@@ -15,8 +15,8 @@ export default function Marquee({
 	text,
 	speed = 60,
 	repeatCount = 8,
-	className = "mx-8 text-5xl md:text-[12vw] font-medium ",
-	containerClassName = "overflow-hidden h-[30vh] py-6 flex items-center",
+	className = "mx-4 md:mx-6 lg:mx-8 text-display-xl font-medium",
+	containerClassName = "overflow-hidden h-[12vh] md:h-[18vh] lg:h-[30vh] py-4 md:py-6 flex items-center",
 }: MarqueeProps) {
 	const trackRef = useRef<HTMLDivElement>(null);
 
@@ -27,13 +27,15 @@ export default function Marquee({
 
 		const distance = track.scrollWidth / 2;
 
-		gsap.to(track, {
+		const tween = gsap.to(track, {
 			x: -distance,
 			duration: speed,
 			ease: "none",
 			repeat: -1,
 		});
-	}, { dependencies: [] });
+
+		return () => tween.kill();
+	}, []);
 
 	return (
 		<div className={containerClassName}>

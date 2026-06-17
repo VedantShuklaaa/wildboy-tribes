@@ -20,14 +20,23 @@ export default function HoverExpand() {
 	const [active, setActive] = useState<number>(0);
 
 	return (
-		<div className="w-full max-w-4xl mx-auto px-6 flex flex-col gap-1 font-twid">
+		<div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-2 font-twid">
 			{IMAGES.map((img, i) => (
 				<motion.div
+					layout
 					key={i}
-					className="relative cursor-pointer overflow-hidden rounded-2xl w-full"
-					animate={{ height: active === i ? "380px" : "48px" }}
-					transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+					className={`relative cursor-pointer overflow-hidden rounded-xl lg:rounded-2xl w-full transition-all
+					${active === i
+							? "h-[220px] md:h-[300px] lg:h-[380px]"
+							: "h-12"}`}
+					transition={{
+						layout: {
+							duration: 0.8,
+							ease: [0.32, 0.72, 0, 1],
+						},
+					}}
 					onHoverStart={() => setActive(i)}
+					onClick={() => setActive(i)}
 					style={{
 						background: !img.src ? COLORS[i % COLORS.length] : undefined,
 					}}
@@ -53,7 +62,7 @@ export default function HoverExpand() {
 								transition={{ duration: 0.2 }}
 								className="absolute inset-0 flex items-center px-5"
 							>
-								<span className="text-sm font-medium tracking-widest uppercase">
+								<span className="text-xs md:text-sm font-medium tracking-widest uppercase">
 									{img.label}
 								</span>
 							</motion.div>
@@ -75,9 +84,9 @@ export default function HoverExpand() {
 									animate={{ opacity: 1, y: 0 }}
 									exit={{ opacity: 0, y: 12 }}
 									transition={{ duration: 0.25, delay: 0.1 }}
-									className="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end"
+									className="absolute bottom-0 left-0 right-0 p-4 md:p-5 lg:p-6 flex justify-between items-end"
 								>
-									<span className="text-white text-2xl font-bold tracking-tight">
+									<span className="text-white text-lg md:text-xl lg:text-2xl font-bold tracking-tight">
 										{img.label}
 									</span>
 									<span className="text-white/50 text-xs font-mono tracking-widest uppercase">

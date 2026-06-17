@@ -2,36 +2,39 @@
 import { useState } from "react";
 import { NavLink, SentenceRoll } from "../layout/navAnimation/navAnimation";
 import SlidingText from "../layout/aboutUsButton/aboutUsButton";
+import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 
 export default function Links() {
 	return (
-		<div className="flex flex-col w-full p-4 gap-3 border-b border-black dark:border-zinc-600">
-			<UnderlineHover>
-				<SentenceRoll className="text-xl font-onest" text="Office: Banglore, Pune. India" />
-			</UnderlineHover>
-			<UnderlineHover>
-				<SentenceRoll className="text-xl font-onest" text="Follow us on instagram" />
-			</UnderlineHover>
-			<UnderlineHover>
-				<SentenceRoll className="text-xl font-onest" text="connect@creativeapes.design" />
-			</UnderlineHover>
+		<div className="flex flex-col w-full gap-3 border-b border-black dark:border-zinc-600">
+			<div className="p-4 flex flex-col gap-2">
+				<UnderlineHover>
+					<SentenceRoll className="text-xl font-onest" text="Office: Banglore, Pune. India" />
+				</UnderlineHover>
+				<UnderlineHover>
+					<SentenceRoll className="text-xl font-onest" text="Follow us on instagram" />
+				</UnderlineHover>
+				<UnderlineHover>
+					<SentenceRoll className="text-xl font-onest" text="connect@creativeapes.design" />
+				</UnderlineHover>
+			</div>
 
 
-			<div className="flex flex-col gap-10 w-full">
-				<span className="h-[30vh] w-full flex flex-col justify-center px-10 gap-4">
-					<p className="text-5xl">We build what doesn’t exist yet. With brands, artists, and institutions, we shape ideas into identities and experiences that move culture forward.</p>
-					<p className="text-xl text-zinc-400">For new projects, collaborations, or inquiries, please add your details to the form</p>
+			<div className="flex flex-col gap-10 w-full p-4">
+				<span className="py-2 w-full flex flex-col gap-4 lg:px-20 xl:px-60 2xl:px-100">
+					<span className="">
+						<p className="text-heading-lg">We build what doesn’t exist yet. With brands, artists, and institutions, we shape ideas into identities and experiences that move culture forward.</p>
+					</span>
+					<span className="">
+						<p className="text-body-sm text-zinc-400 ">For new projects, collaborations, or inquiries, please add your details to the form</p>
+					</span>
 				</span>
 
 				<ContactForm />
-
-				<div className="h-[5vh] w-full flex item-center justify-between p-4 text-xl text-black dark:text-zinc-400">
-					<span>© Featured Projects</span>
-					<span>(CAD® — 02)</span>
-					<span>Digital Showcase</span>
-				</div>
 			</div>
+
+			<BottomDesc text1="© Featured Projects" text2="(CAD® — 02)" text3="Digital Showcase" />
 		</div>
 	)
 }
@@ -102,9 +105,9 @@ export function ContactForm() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full mx-auto px-8 py-10 font-onest"
+			className="w-full mx-auto flex flex-col gap-5 py-5 lg:px-20 xl:px-60 2xl:px-100 font-onest"
 		>
-			<div className="space-y-12 text-xl">
+			<div className="space-y-2 text-body-md">
 
 				<div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
 					<span>Hello! My name is</span>
@@ -222,14 +225,12 @@ export function ContactForm() {
 				<div className="pt-4">
 					<p>Looking forward to your reply!!</p>
 				</div>
-
-				{/* Your custom button goes here */}
-				<button className="group relative w-fit h-10 px-5 border-2 rounded-xl border-black dark:border-white flex items-center justify-center overflow-hidden" type="submit">
-					<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
-					<span className="relative z-10"><SlidingText text="SUBMIT" /></span>
-				</button>
-
 			</div>
+
+			<button className="group relative w-fit h-10 px-5 border-2 rounded-xl border-black dark:border-white flex items-center justify-center overflow-hidden" type="submit">
+				<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
+				<span className="relative z-10"><SlidingText text="SUBMIT" /></span>
+			</button>
 		</form>
 	);
 }

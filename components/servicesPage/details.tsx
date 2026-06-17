@@ -40,8 +40,8 @@ export default function DetailCard() {
 	}, { scope: containerRef });
 
 	return (
-		<div className="mt-40 flex flex-col gap-10" ref={containerRef}>
-			<BigRevealCard className="mx-auto h-[80vh] w-[70vw] overflow-hidden rounded-[40px] border border-zinc-700">
+		<div className="mt-20 md:mt-28 lg:mt-40 flex flex-col gap-8 lg:gap-10" ref={containerRef}>
+			<BigRevealCard className="mx-auto h-[35vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] w-[95vw] md:w-[85vw] lg:w-[70vw] overflow-hidden rounded-2xl lg:rounded-[40px] border border-zinc-700">
 				<Image
 					src="/images/about.jpg"
 					alt="About"
@@ -50,41 +50,46 @@ export default function DetailCard() {
 				/>
 			</BigRevealCard>
 
-			{data.map((items, idx) => (
-				<div
-					key={idx}
-					className="service-card h-[40vh] w-full flex flex-col p-4 font-twid"
-				>
-					<div className="h-[20%] w-full flex">
-						<div className="w-10 text-xl">0{idx + 1}</div>
-						<div className="flex w-full gap-5">
-							<div className="w-fit text-4xl flex items-center justify-center">
-								{items.title}
-							</div>
+			<div className="flex flex-col w-full">
+				{data.map((items, idx) => (
+					<div
+						key={idx}
+						className="service-card min-h-[30vh] w-full flex flex-col p-4 font-twid"
+					>
+						<div className="w-full flex flex-col lg:flex-row gap-4 lg:gap-0">
+							<div className="w-10 text-base md:text-lg lg:text-xl">0{idx + 1}</div>
+							<div className="flex w-full gap-5">
+								<div className="w-fit text-heading-lg md:text-heading-xl flex items-center justify-center">
+									{items.title}
+								</div>
 
-							<div className="flex-1 flex items-center">
-								<div className="h-px w-full bg-black dark:bg-zinc-600" />
-							</div>
+								<div className="flex-1 flex items-center">
+									<div className="h-px w-full bg-black dark:bg-zinc-600" />
+								</div>
 
-							<div className="w-fit flex items-center justify-center gap-1 whitespace-nowrap">
-								<Timer className="h-4 w-4" />
-								{items.timerange} weeks
+								<div className="w-fit flex items-center justify-center gap-1 whitespace-nowrap text-body-lg md:text-heading-lg">
+									<Timer className="h-3 sm:h-4 w-3 sm:w-4" />
+									{items.timerange} weeks
+								</div>
+							</div>
+						</div>
+						<div className="w-full py-6 px-0 md:px-4 lg:px-10 flex justify-between gap-8">
+							<div className="flex flex-col justify-center md:text-body-lg">
+								<span>{items.discription_1}</span>
+								<span>{items.discription_2}</span>
+								<span>{items.discription_3}</span>
+								<span>{items.discription_4}</span>
+								{items.discription_5 && (
+									<span>{items.discription_5}</span>
+								)}
+							</div>
+							<div className="flex items-center justify-center lg:w-50">
+								{items.icon}
 							</div>
 						</div>
 					</div>
-					<div className="h-[80%] w-full py-6 px-10 flex justify-between">
-						<div className="h-full w-100 flex flex-col justify-center text-2xl">
-							<span>{items.discription_1}</span>
-							<span>{items.discription_2}</span>
-							<span>{items.discription_3}</span>
-							<span>{items.discription_4}</span>
-						</div>
-						<div className="h-full w-50 flex items-center justify-center">
-							{items.icon}
-						</div>
-					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</div>
 	)
 }
@@ -110,7 +115,7 @@ const data: Data[] = [
 		discription_3: "Communities",
 		discription_4: "Networks",
 		discription_5: "Distribution",
-		icon: <LayersIcon className="h-40 w-40" />
+		icon: <LayersIcon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}, {
 		title: "Positioning & Brand Systems",
 		timerange: "2 - 4",
@@ -119,7 +124,7 @@ const data: Data[] = [
 		discription_3: "Strategy",
 		discription_4: "Content",
 		discription_5: "Creative Direction",
-		icon: <SketchLogoIcon className="h-40 w-40" />
+		icon: <SketchLogoIcon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}, {
 		title: "Programming & Experience Design",
 		timerange: "3 - 4",
@@ -128,7 +133,7 @@ const data: Data[] = [
 		discription_3: "Production",
 		discription_4: "Crowd Psychology",
 		discription_5: "Concept Development",
-		icon: <Component1Icon className="h-40 w-40" />
+		icon: <Component1Icon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}, {
 		title: "Talent & Culture",
 		timerange: "4 - 6",
@@ -136,7 +141,7 @@ const data: Data[] = [
 		discription_2: "Talent Strategy",
 		discription_3: "Performance Curation",
 		discription_4: "Cultural Alignment",
-		icon: <DashboardIcon className="h-40 w-40" />
+		icon: <DashboardIcon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}, {
 		title: "Partnerships & Growth",
 		timerange: "4 - 6",
@@ -145,7 +150,7 @@ const data: Data[] = [
 		discription_3: "Sponsorships",
 		discription_4: "Community Building",
 		discription_5: " Client Relations",
-		icon: <Share1Icon className="h-40 w-40" />
+		icon: <Share1Icon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}, {
 		title: "Execution & Revenue Systems",
 		timerange: "4 - 6",
@@ -154,6 +159,6 @@ const data: Data[] = [
 		discription_3: "On-Ground Execution",
 		discription_4: "Coordination",
 		discription_5: "Revenue Optimization",
-		icon: <Link2Icon className="h-40 w-40" />
+		icon: <Link2Icon className="h-20 w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" />
 	}
 ]

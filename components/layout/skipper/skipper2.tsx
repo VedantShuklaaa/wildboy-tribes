@@ -31,9 +31,13 @@ function SlideImage({
 	if (failed) {
 		return (
 			<div
-				className="h-full w-full"
+				className="flex h-full w-full items-center justify-center"
 				style={{ backgroundColor: color }}
-			/>
+			>
+				<span className="text-sm font-medium text-white">
+					Image unavailable
+				</span>
+			</div>
 		);
 	}
 

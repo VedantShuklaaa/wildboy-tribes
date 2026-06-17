@@ -17,7 +17,27 @@ interface OrbitBackgroundProps {
 }
 
 const CARD_COUNT = 6;
-const RADIUS = 420;
+const getRadius = () => {
+	if (typeof window === "undefined") return 420;
+	const width = window.innerWidth;
+
+	// Small phones
+	if (width < 375) return 90;
+	// Large phones
+	if (width < 480) return 110;
+	// Landscape phones / small tablets
+	if (width < 640) return 130;
+	// Tablets
+	if (width < 768) return 150;
+	// Large tablets
+	if (width < 1024) return 220;
+	// Small laptops
+	if (width < 1280) return 320;
+	// Large laptops
+	if (width < 1536) return 380;
+	// Ultra-wide desktops
+	return 420;
+  };
 
 export function OrbitBackground({
 	pivotX = "50%",
@@ -108,13 +128,13 @@ export function OrbitBackground({
 					return (
 						<div
 							key={index}
-							className="absolute left-1/2 top-1/2 h-[250px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-black dark:bg-white shadow-2xl"
+							className="absolute left-1/2 top-1/2 h-[120px] w-[180px] md:h-[180px] md:w-[280px] lg:h-[250px] lg:w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-black dark:bg-white shadow-2xl"
 							style={{
-								transform: `rotateY(${angle}deg) translateZ(${RADIUS}px)`,
+								transform: `rotateY(${angle}deg) translateZ(${getRadius()}px)`,
 							}}
 						>
 							<div className="flex h-full w-full items-center justify-center">
-								<span className="text-6xl font-bold text-white dark:text-black">
+								<span className="text-2xl md:text-4xl lg:text-6xl font-bold text-white dark:text-black">
 									{index + 1}
 								</span>
 							</div>
@@ -133,15 +153,15 @@ const text = "This is where we deploy our systems. Each space becomes a live env
 export default function carouselPage() {
 	return (
 		<div className="relative w-full font-twid" id="ai-labs">
-			<section className="relative min-h-screen flex flex-col items-center justify-center gap-8 border-b border-black dark:border-zinc-600">
+			<section className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center gap-6 lg:gap-8 border-b border-black dark:border-zinc-600">
 				<div className="absolute inset-0 pointer-events-none">
 					<OrbitBackground pivotY="30%" />
 				</div>
 
-				<div className="relative z-10 w-[45vw] text-center mt-100">
+				<div className="relative z-10 w-[90vw] md:w-[70vw] lg:w-[45vw] text-center mt-55 lg:mt-100">
 					<ScrollRevealText
 						text={text}
-						className="text-4xl"
+						className="text-xl md:text-3xl lg:text-4xl"
 					/>
 				</div>
 
@@ -160,7 +180,7 @@ export default function carouselPage() {
 			<CardStack />
 
 			{/* EXTRA CONTENT AFTER STACK */}
-			<section className="h-[20vh] w-full text-2xl flex items-end justify-between px-4 py-2 text-black dark:text-zinc-400 border-b border-black dark:border-zinc-600">
+			<section className="min-h-[12vh] lg:h-[20vh] w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 px-4 py-4 text-sm md:text-lg lg:text-2xl text-black dark:text-zinc-400 border-b border-black dark:border-zinc-600">
 				<span>© Clients</span>
 				<span>(CAD® — 06)</span>
 				<span>Brand Partners</span>

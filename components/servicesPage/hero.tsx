@@ -1,21 +1,20 @@
-
-
-
+import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 export default function Hero() {
 	return (
-		<div className="h-[60vh] w-full flex flex-col border-b border-black dark:border-zinc-600">
-			<div className="h-[90%] w-full flex items-center px-4">
-				<div className="h-full w-full"></div>
-				<div className="w-[80vw] text-4xl font-light">
-					Our services cover the full spectrum of venue business development — from strategy and audience growth to event design, talent programming, and on-ground execution — all designed to move your business forward.
+		<div className="min-h-[40vh] lg:h-[60vh] w-full flex flex-col border-b border-black dark:border-zinc-600">
+			<div className="flex-1 w-full flex flex-col lg:flex-row items-center px-4 lg:px-6 py-6 lg:py-0 gap-6 lg:gap-0">
+				<div className="hidden lg:block h-full w-full" />
+
+				<div className="w-full lg:w-[80vw] text-heading-lg md:text-heading-xl font-light leading-tight">
+					Our services cover the full spectrum of venue business development —
+					from strategy and audience growth to event design, talent
+					programming, and on-ground execution — all designed to move your
+					business forward.
 				</div>
 			</div>
-			<div className="h-[10%] w-full px-4 py-2 flex items-center justify-between text-xl text-black dark:text-zinc-400">
-				<span>© Studio Capabilities</span>
-				<span>(CAD® — 02)</span>
-				<span>Digital Execution</span>
-			</div>
+
+			<BottomDesc text1="© Studio Capabilities" text2="(CAD® — 02)" text3="Digital Execution" />
 		</div>
-	)
+	);
 }

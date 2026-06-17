@@ -9,13 +9,15 @@ gsap.registerPlugin(ScrollTrigger);
 interface FloatingCardProps {
 	children: React.ReactNode;
 	className?: string;
+	style?: React.CSSProperties; // ← add this
 	y?: number;
 }
 
+
 export default function FloatingCard({
-	children,
-	className = "",
-	y = 80,
+	children, className = "",
+	style,
+	y = 80
 }: FloatingCardProps) {
 	const cardRef = useRef<HTMLDivElement>(null);
 
@@ -41,10 +43,7 @@ export default function FloatingCard({
 	}, { scope: cardRef, dependencies: [] });
 
 	return (
-		<div
-			ref={cardRef}
-			className={className}
-		>
+		<div ref={cardRef} className={className} style={style}>
 			{children}
 		</div>
 	);

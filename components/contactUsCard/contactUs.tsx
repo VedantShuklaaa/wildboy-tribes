@@ -29,7 +29,8 @@ const item = {
 	},
 };
 
-const inputStyles = "w-full rounded-[10px] border border-zinc-800 bg-transparent px-6 py-4 text-xl text-black dark:text-white outline-none transition-colors duration-300 placeholder:text-black dark:placeholder:text-white focus:border-zinc-600";
+const inputStyles =
+	"w-full rounded-[10px] border border-zinc-800 bg-transparent px-4 md:px-6 py-3 md:py-4 text-base md:text-lg lg:text-xl text-black dark:text-white outline-none transition-colors duration-300 placeholder:text-black dark:placeholder:text-white focus:border-zinc-600";
 
 export default function ContactUs() {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,12 +42,12 @@ export default function ContactUs() {
 			id="contact"
 			className="w-full min-h-screen font-onest"
 		>
-			<div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
+			<div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh] gap-10 lg:gap-0">
 				{/* Left */}
 				<div className="flex items-center justify-center p-6 lg:p-10">
 					<div className="w-full flex flex-col gap-10">
 						<div className="flex flex-col gap-3">
-							<h2 className="text-4xl md:text-6xl leading-tight">
+							<h2 className="text-3xl md:text-5xl lg:text-6xl leading-tight">
 								Let’s create something amazing together!
 							</h2>
 
@@ -62,7 +63,7 @@ export default function ContactUs() {
 
 							<Link
 								href="mailto:contact@creativeapes.design"
-								className="text-xl md:text-2xl text-[#F04D5A] font-twid"
+								className="text-lg md:text-xl lg:text-2xl text-[#F04D5A] font-twid break-all"
 							>
 								contact@creativeapes.design
 							</Link>
@@ -110,7 +111,7 @@ export default function ContactUs() {
 								required
 								rows={6}
 								placeholder="Message*"
-								className={`${inputStyles} resize - none`}
+								className={`${inputStyles} resize-none`}
 							/>
 
 							<button
@@ -128,9 +129,9 @@ export default function ContactUs() {
 						<div className="flex justify-start">
 							<Link
 								href="#top"
-								className="flex h-14 w-14 items-center justify-center rounded-full bg-black dark:bg-white transition-colors duration-300 hover:bg-[#F04D5A] dark:hover:bg-[#F04D5A]"
+								className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-black dark:bg-white transition-colors duration-300 hover:bg-[#F04D5A] dark:hover:bg-[#F04D5A]"
 							>
-								<ArrowUp className="h-5 w-5 text-white dark:text-black" />
+								<ArrowUp className="h-4 w-4 md:h-5 md:w-5 text-white dark:text-black" />
 							</Link>
 						</div>
 					</div>
@@ -139,7 +140,7 @@ export default function ContactUs() {
 
 			{/* Footer */}
 			<div className="border-b">
-				<div className="flex flex-col gap-8 p-4 lg:flex-row lg:justify-between lg:gap-0">
+				<div className="flex flex-col gap-6 p-4 md:p-6 lg:flex-row lg:justify-between lg:gap-0">
 					<div className="flex flex-col">
 						<span className="text-sm uppercase tracking-wide text-zinc-500">
 							Quick Links
@@ -151,7 +152,7 @@ export default function ContactUs() {
 					<div className="flex flex-col lg:items-end">
 						<Socials />
 
-						<span className="flex items-center gap-3">
+						<span className="flex flex-wrap items-center gap-3 text-sm md:text-base">
 							<Link href="/">Privacy</Link>
 							<div className="h-4 w-px bg-current opacity-30" />
 							<Link href="/">Terms</Link>
@@ -166,7 +167,7 @@ export default function ContactUs() {
 export function Socials() {
 	return (
 		<motion.div
-			className="flex flex-wrap gap-2"
+			className="flex flex-wrap gap-x-2 gap-y-1 text-sm md:text-base lg:text-lg"
 			variants={container}
 			initial="hidden"
 			animate="show"
@@ -191,7 +192,7 @@ export function Socials() {
 export function BottomLinks() {
 	return (
 		<motion.div
-			className="flex flex-wrap gap-2"
+			className="flex flex-wrap gap-x-2 gap-y-1 text-sm md:text-base lg:text-lg"
 			variants={container}
 			initial="hidden"
 			animate="show"

@@ -19,71 +19,105 @@ export default function FeaturedProjects() {
 	const [hovered, setHovered] = useState<string | null>(null);
 
 	return (
-		<section className="relative h-screen w-full overflow-hidden bg-black">
+		<section className="relative min-h-screen w-full overflow-hidden bg-black">
 			{/* Header */}
-			<div className="absolute left-6 top-6 z-50">
-				<h1 className="font-druk text-6xl text-white uppercase">
-					Selected Client Projects
-				</h1>
+			<div className="flex flex-col gap-4 lg:block">
+				<div className="absolute left-4 lg:left-6 top-4 lg:top-6 z-50">
+					<h1 className="font-druk text-3xl md:text-5xl lg:text-6xl text-white uppercase">
+						Selected Client Projects
+					</h1>
+				</div>
+
+				<div className="absolute right-4 lg:right-6 top-4 lg:top-6 z-50">
+					<button className="group flex items-center gap-3 border border-white px-4 py-2 lg:px-6 lg:py-3 text-white">
+						<span className="font-twid italic uppercase text-sm lg:text-base">
+							View All Projects
+						</span>
+
+						<ArrowUpRight
+							size={16}
+							className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+						/>
+					</button>
+				</div>
 			</div>
 
-			<div className="absolute right-6 top-6 z-50">
-				<button className="group flex items-center gap-3 border border-white px-6 py-3 text-white">
-					<span className="font-twid italic uppercase">
-						View All Projects
-					</span>
-
-					<ArrowUpRight
-						size={18}
-						className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-					/>
-				</button>
-			</div>
-
-			{/* Cards */}
-			<div className="absolute left-1/2 top-[58%] h-[700px] w-[1400px] -translate-x-1/2 -translate-y-1/2">
-				{projects.map((project, idx) => (
-					<motion.div
-						key={idx}
-						className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-						onHoverStart={() => setHovered(project.title)}
-						onHoverEnd={() => setHovered(null)}
-						style={{
-							zIndex:
-								hovered === project.title
-									? 999
-									: project.z,
-						}}
-						initial={false}
-						animate={{
-							x: project.x,
-							y: hovered === project.title
-								? project.y - 20
-								: project.y,
-							scale: hovered === project.title ? 1.05 : 1,
-							rotate: hovered === project.title ? 0 : project.tilt,
-						}}
-						transition={{
-							type: "spring",
-							stiffness: 300,
-							damping: 25,
-						}}
-					>
-						<TiltCard
-							tilt={String(project.tilt)}
-							className="h-[720px] w-[520px]"
+			{/* Mobile Layout */}
+			<div className="lg:hidden pt-32 pb-10">
+				<div className="flex gap-4 overflow-x-auto px-4 snap-x snap-mandatory">
+					{projects.map((project) => (
+						<div
+							key={project.title}
+							className="relative shrink-0 w-[280px] h-[400px] snap-center rounded-xl overflow-hidden"
 						>
 							<Image
 								src={project.src}
+								alt={project.title}
 								fill
 								quality={100}
-								sizes="520px"
 								className="object-cover"
-								alt="NA"
 							/>
-						</TiltCard>
-					</motion.div>
-				))}
+
+							<div className="absolute bottom-0 left-0 right-0 p-4 bg-black/40 backdrop-blur-sm">
+								<span className="text-white font-twid text-xl">
+									{project.title}
+								</span>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			{/* Desktop Layout */}
+			<div className="hidden lg:block">
+				<div className="absolute left-1/2 top-[58%] h-[700px] w-[1400px] -translate-x-1/2 -translate-y-1/2">
+					{projects.map((project, idx) => (
+						<motion.div
+							key={idx}
+							className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+							onHoverStart={() => setHovered(project.title)}
+							onHoverEnd={() => setHovered(null)}
+							style={{
+								zIndex: hovered === project.title ? 999 : project.z,
+							}}
+							initial={false}
+							animate={{
+								x: project.x,
+								y:
+									hovered === project.title
+										? project.y - 20
+										: project.y,
+								scale:
+									hovered === project.title
+										? 1.05
+										: 1,
+								rotate:
+									hovered === project.title
+										? 0
+										: project.tilt,
+							}}
+							transition={{
+								type: "spring",
+								stiffness: 300,
+								damping: 25,
+							}}
+						>
+							<TiltCard
+								tilt={String(project.tilt)}
+								className="relative h-[720px] w-[520px]"
+							>
+								<Image
+									src={project.src}
+									alt={project.title}
+									fill
+									quality={100}
+									sizes="520px"
+									className="object-cover"
+								/>
+							</TiltCard>
+						</motion.div>
+					))}
+				</div>
 			</div>
 		</section>
 	);

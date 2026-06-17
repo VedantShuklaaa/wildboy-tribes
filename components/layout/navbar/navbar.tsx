@@ -103,7 +103,9 @@ export default function Navbar() {
 			</div>
 
 
-			<Navlinks />
+			<div className="hidden lg:flex items-center justify-center">
+				<Navlinks />
+			</div>
 
 			{/* Desktop Navigation */}
 			<div className="hidden lg:flex items-center gap-4 lg:gap-25">

@@ -1,18 +1,15 @@
+import BottomDesc from "../layout/bottomDesc/bottomDesc";
 import HoverExpand from "../layout/hoverCard/hoverCardDisplay";
 
 
 export default function HoverCards() {
 	return (
-		<div className="h-screen w-full flex flex-col items-center justify-center border-b border-black dark:border-zinc-600">
-			<div className="h-[95%] w-full flex items-center justify-center">
+		<div className="min-h-screen w-full flex flex-col border-b border-black dark:border-zinc-600">
+			<div className="flex-1 w-full flex items-center justify-center py-10 lg:py-0">
 				<HoverExpand />
 			</div>
 
-			<div className="h-[5%] w-full px-4 flex items-center justify-between text-xl text-black dark:text-zinc-400">
-				<span>© Featured Projects</span>
-				<span>(CAD® — 04)</span>
-				<span>Digital Showcase</span>
-			</div>
+			<BottomDesc text1="© Featured Projects" text2="(CAD® — 04)" text3="Digital Showcase" />
 		</div>
 	)
 }
