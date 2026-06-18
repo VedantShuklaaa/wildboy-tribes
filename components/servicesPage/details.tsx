@@ -40,14 +40,18 @@ export default function DetailCard() {
 	}, { scope: containerRef });
 
 	return (
-		<div className="mt-20 md:mt-28 lg:mt-40 flex flex-col gap-8 lg:gap-10" ref={containerRef}>
+		<div className="mt-20 md:mt-28 lg:mt-20 flex flex-col gap-8 lg:gap-10" ref={containerRef}>
 			<BigRevealCard className="mx-auto h-[35vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] w-[95vw] md:w-[85vw] lg:w-[70vw] overflow-hidden rounded-2xl lg:rounded-[40px] border border-zinc-700">
-				<Image
-					src="/AQUA_RUMBLE.png"
-					alt="About"
-					fill
-					className="object-cover"
-				/>
+				<div className="relative h-full w-full">
+					<Image
+						src="/AQUA_RUMBLE.png"
+						alt="About"
+						fill
+						priority
+						sizes="(max-width: 768px) 95vw, (max-width: 1024px) 85vw, 70vw"
+						className="object-cover"
+					/>
+				</div>
 			</BigRevealCard>
 
 			<div className="flex flex-col w-full">

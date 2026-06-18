@@ -34,7 +34,7 @@ export default function Second() {
 
 			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-black">
 				<span className="leading-none">
-					<p className="text-center text-display-lg sm:text-display-xl font-onest font-bold tracking-tighter">DESIGN ENGINEERING STRATEGY</p>
+					<p className="text-center text-display-lg sm:text-display-lg font-druk font-bold tracking-tighter">DESIGN ENGINEERING STRATEGY</p>
 				</span>
 			</div>
 		</div>

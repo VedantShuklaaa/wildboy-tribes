@@ -5,8 +5,7 @@ import FloatingCard from "../layout/floatingCard/floatingCard";
 import ScrollRevealText from "../scrolltriger/fillColor";
 import Link from "next/link";
 
-const text =
-	"What begins within our community doesn't stay here. It moves outward — shaping the work, the experiences, and the culture we bring into the world. Every collaboration and every exchange adds to something larger — influencing how ideas take form and how creative work evolves beyond individual effort. Over time, this shared momentum builds depth, direction, and relevance — allowing us to create work that resonates, performs, and lasts.";
+const text = "What begins within our community doesn't stay here. It moves outward — shaping the work, the experiences, and the culture we bring into the world. Every collaboration and every exchange adds to something larger — influencing how ideas take form and how creative work evolves beyond individual effort. Over time, this shared momentum builds depth, direction, and relevance — allowing us to create work that resonates, performs, and lasts.";
 
 
 const CARDS = [
@@ -59,7 +58,7 @@ export default function Second() {
 							style={{ left, top }}
 						>
 							<div
-								className="border border-black dark:border-zinc-600 rounded-sm"
+								className="border border-zinc-100 dark:border-zinc-900 rounded-sm"
 								style={{ height, width }}
 							/>
 						</FloatingCard>

@@ -3,13 +3,13 @@ import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 export default function Feature() {
 	return (
-		<div className="min-h-screen lg:h-[90vh] w-full flex flex-col justify-between border-b border-black dark:border-zinc-600">
+		<div className="w-full flex flex-col justify-between border-b border-zinc-100 dark:border-zinc-900">
 
-			<div className="flex-1">
-				<div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr_1fr] w-full font-onest border-b border-black dark:border-zinc-600">
+			<div className="flex-1 lg:py-10">
+				<div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr_1fr] w-full font-onest border-b border-zinc-100 dark:border-zinc-900">
 
 					{/* Card 1 */}
-					<div className="lg:border-r border-black dark:border-zinc-600">
+					<div className="lg:border-r border-zinc-100 dark:border-zinc-900">
 						<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 							<span className="text-heading-xl">
 								Bloc
@@ -20,20 +20,21 @@ export default function Feature() {
 							</span>
 						</div>
 
-						<div className="flex items-center justify-center px-4 md:px-6 pb-6 group">
-							<div className="project-card relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] w-full overflow-hidden rounded-xl">
+						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
+							<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-xl group">
 								<Image
 									src="/1.png"
-									alt="Project Preview"
+									alt="NAH"
 									fill
 									className="object-cover transition-transform duration-700 group-hover:scale-105"
+									sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
 								/>
 							</div>
 						</div>
 					</div>
 
 					{/* Card 2 */}
-					<div className="lg:border-r border-black dark:border-zinc-600">
+					<div className="lg:border-r border-zinc-100 dark:border-zinc-900">
 						<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 							<span className="text-heading-xl">
 								Redmi 11S
@@ -44,13 +45,14 @@ export default function Feature() {
 							</span>
 						</div>
 
-						<div className="flex items-center justify-center px-4 md:px-6 pb-6 group">
-							<div className="project-card relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] w-full overflow-hidden rounded-xl">
+						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
+							<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-xl group">
 								<Image
-									src="/2.png"
-									alt="Project Preview"
+									src="/KITTY&CHAOS.png"
+									alt="NAH"
 									fill
 									className="object-cover transition-transform duration-700 group-hover:scale-105"
+									sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
 								/>
 							</div>
 						</div>

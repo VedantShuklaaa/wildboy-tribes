@@ -7,7 +7,7 @@ import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 export default function Links() {
 	return (
-		<div className="flex flex-col w-full gap-3 border-b border-black dark:border-zinc-600">
+		<div className="flex flex-col w-full gap-3 border-b border-zinc-100 dark:border-zinc-900">
 			<div className="p-4 flex flex-col gap-2">
 				<UnderlineHover>
 					<SentenceRoll className="text-xl font-onest" text="Office: Banglore, Pune. India" />

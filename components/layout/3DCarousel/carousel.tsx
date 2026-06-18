@@ -158,7 +158,7 @@ export function OrbitBackground({
 							}}
 						>
 							<div className="flex h-full w-full items-center justify-center">
-								<span className="text-2xl md:text-4xl lg:text-6xl font-bold text-white dark:text-black">
+								<div className="relative h-full w-full">
 									<Image
 										src={ORBIT_IMAGES[index]}
 										alt="NAH"
@@ -166,7 +166,7 @@ export function OrbitBackground({
 										className="object-cover"
 										sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
 									/>
-								</span>
+								</div>
 							</div>
 						</div>
 					);
@@ -181,8 +181,8 @@ const text = "This is where we deploy our systems. Each space becomes a live env
 
 export default function carouselPage() {
 	return (
-		<div className="relative w-full font-twid" id="ai-labs">
-			<section className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center gap-6 lg:gap-8 border-b border-black dark:border-zinc-600">
+		<div className="relative w-full font-twid border border-zinc-100 dark:border-zinc-900" >
+			<section className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center gap-6 lg:gap-8 border-b border-zinc-100 dark:border-zinc-900">
 				<div className="absolute inset-0 pointer-events-none">
 					<OrbitBackground pivotY="30%" />
 				</div>

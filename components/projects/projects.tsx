@@ -65,11 +65,11 @@ export default function Projects() {
 	return (
 		<div id="work">
 			{/* Main Projects Grid */}
-			<div className="grid grid-cols-1 lg:grid-cols-2 font-onest font-light border-t border-black dark:border-zinc-900">
+			<div className="grid grid-cols-1 lg:grid-cols-2 font-onest font-light border-t border-zinc-100 dark:border-zinc-900">
 				{projects.map((project, index) => (
 					<div
 						key={project.title}
-						className={`border-b border-black dark:border-zinc-900 lg:min-h-[80vh] ${index % 2 === 1 ? "lg:border-l lg:border-black lg:dark:border-zinc-900" : ""}`}
+						className={`border-b border-zinc-100 dark:border-zinc-900 lg:min-h-[80vh] ${index % 2 === 1 ? "lg:border-l lg:border-zinc-100 lg:dark:border-zinc-900" : ""}`}
 					>
 						<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 							<span className="text-3xl md:text-4xl lg:text-5xl">
@@ -82,11 +82,12 @@ export default function Projects() {
 						</div>
 
 						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-							<div className="project-card relative h-[300px] md:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-xl group">
+							<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-xl group">
 								<Image
 									src={project.src}
 									alt={project.title}
 									fill
+									priority={index === 0}
 									className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
 									sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
 								/>
@@ -97,10 +98,10 @@ export default function Projects() {
 			</div>
 
 			{/* Bottom Grid */}
-			<div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr_1fr] border-b border-black dark:border-zinc-600">
+			<div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr_1fr] border-b border-zinc-100 dark:border-zinc-900">
 
 				{/* Bloc */}
-				<div className="lg:border-r border-black dark:border-zinc-600">
+				<div className="lg:border-r border-zinc-100 dark:border-zinc-900">
 					<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 						<span className="text-3xl md:text-4xl lg:text-5xl">
 							Bloc
@@ -112,7 +113,7 @@ export default function Projects() {
 					</div>
 
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-						<div className="project-card relative h-[300px] md:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-xl group">
+						<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-xl group">
 							<Image
 								src="/AQUA_RUMBLE.png"
 								alt="NAH"
@@ -125,7 +126,7 @@ export default function Projects() {
 				</div>
 
 				{/* Redmi */}
-				<div className="lg:border-r border-black dark:border-zinc-600">
+				<div className="lg:border-r border-zinc-100 dark:border-zinc-900">
 					<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 						<span className="text-3xl md:text-4xl lg:text-5xl">
 							Redmi 11S
@@ -137,7 +138,7 @@ export default function Projects() {
 					</div>
 
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
-						<div className="project-card relative h-[300px] md:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-xl group">
+						<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-xl group">
 							<Image
 								src="/KITTY&CHAOS.png"
 								alt="NAH"

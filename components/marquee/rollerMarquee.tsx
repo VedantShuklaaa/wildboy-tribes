@@ -39,10 +39,10 @@ export default function ScrollCarousel() {
 	return (
 		<section
 			ref={sectionRef}
-			className="relative overflow-hidden flex flex-col font-twid border-b border-black dark:border-zinc-600 hidden md:flex"
+			className="relative overflow-hidden flex flex-col font-twid border-b border-zinc-100 dark:border-zinc-900 hidden md:flex"
 		>
 			{/* Marquee */}
-			<div className="flex w-full border-b border-black dark:border-zinc-600">
+			<div className="flex w-full border-b border-zinc-100 dark:border-zinc-900">
 				<Marquee text="clients©" />
 			</div>
 
@@ -55,7 +55,7 @@ export default function ScrollCarousel() {
 					{CARDS.map((src, i) => (
 						<div
 							key={i}
-							className="carousel-card h-[250px] w-[80vw] md:h-[350px] md:w-[60vw] lg:h-[40vh] lg:w-[30vw] flex-shrink-0 overflow-hidden rounded-sm border border-zinc-700 flex items-center justify-center text-2xl md:text-4xl lg:text-5xl"
+							className="carousel-card h-[250px] w-[80vw] md:h-[350px] md:w-[60vw] lg:h-[40vh] lg:w-[30vw] flex-shrink-0 overflow-hidden rounded-sm border border-zinc-800 flex items-center justify-center text-2xl md:text-4xl lg:text-5xl"
 						>
 							{src}
 						</div>

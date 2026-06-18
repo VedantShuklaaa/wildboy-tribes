@@ -103,7 +103,7 @@ export default function CardStack() {
 					key={idx}
 					className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 					style={{
-						zIndex: idx - 1,
+						zIndex: idx,
 					}}
 				>
 					<div className={`stack-card h-screen w-screen flex flex-col sm:flex-row items-center justify-center font-twid font-bold text-white ${card.color}`}>
@@ -125,9 +125,10 @@ export default function CardStack() {
 										src={card.src}
 										alt={card.title}
 										fill
-										quality={100}
+										priority={idx === 0}
+										loading={idx === 0 ? "eager" : undefined}
 										className="object-cover"
-										sizes="800px"
+										sizes="(max-width: 768px) 300px, (max-width: 1024px) 340px, (max-width: 1280px) 450px, (max-width: 1536px) 550px, 750px"
 									/>
 								</div>
 							</TiltCard>

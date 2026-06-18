@@ -22,7 +22,7 @@ export default function Page() {
 			</Reveal>
 			<Works />
 
-			<div className="w-full flex border-t border-black dark:border-zinc-600">
+			<div className="w-full flex border-t border-zinc-100 dark:border-zinc-900">
 				<Marquee text="@Intellectual Property" />
 			</div>
 			<CardStack />

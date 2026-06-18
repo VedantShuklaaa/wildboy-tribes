@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { cn } from "@/lib/utils"; import { useState } from "react";
+import Image from "next/image";
 
 function SlideImage({
 	src,
@@ -42,11 +43,13 @@ function SlideImage({
 	}
 
 	return (
-		<img
+		<Image
 			src={src}
 			alt={alt}
-			className="h-full w-full object-cover"
-			onError={() => setFailed(true)}
+			priority
+			fill
+			sizes="350px"
+			className="object-cover pointer-events-none"
 		/>
 	);
 }
@@ -85,11 +88,11 @@ const Skiper49 = () => {
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "5.png",
+			src: "/5.png",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "6.png",
+			src: "/6.png",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 

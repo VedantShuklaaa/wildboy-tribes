@@ -20,7 +20,7 @@ export default function TiltCard({
 			}}
 		>
 			<div
-				className={`h-full w-full bg-[#938ACF] shadow-[0_30px_80px_rgba(0,0,0,0.25)] ${cardClassName}`}
+				className={`h-full w-full bg-[#938ACF] shadow-[0_30px_80px_rgba(0,0,0,0.25)] relative overflow-hidden ${cardClassName}`}
 				style={{
 					transform: `rotateZ(${tilt}deg)`,
 					transformStyle: "preserve-3d",

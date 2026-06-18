@@ -9,7 +9,7 @@ export default function HeroText() {
 	return (
 		<div className="flex flex-col" id="top">
 			{/* Hero */}
-			<div className="min-h-[50vh] lg:h-[50vh] border-b border-black dark:border-zinc-700 flex flex-col lg:flex-row items-end justify-between px-4 py-7 lg:px-7 gap-6 lg:gap-0">
+			<div className="min-h-[50vh] lg:h-[50vh] border-b border-zinc-100 dark:border-zinc-900 flex flex-col lg:flex-row items-end justify-between px-4 py-7 lg:px-7 gap-6 lg:gap-0">
 
 				<div className="w-full lg:w-[45vw] lg:h-[45vh] flex flex-col font-twid font-medium text-3xl md:text-5xl lg:text-6xl leading-none">
 					<span>FROM EMPTY SPACES</span>
@@ -22,6 +22,7 @@ export default function HeroText() {
 					<Image
 						src="/1.png"
 						alt="Your image"
+						priority
 						fill
 						className="object-cover"
 						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 25vw"
@@ -30,7 +31,7 @@ export default function HeroText() {
 			</div>
 
 			{/* Main Heading */}
-			<div className="min-h-[20vh] lg:h-[35vh] w-full border-b border-black dark:border-zinc-600 flex items-center justify-center px-4 py-8 lg:py-0">
+			<div className="min-h-[20vh] lg:h-[35vh] w-full border-b border-zinc-100 dark:border-zinc-900 flex items-center justify-center px-4 py-8 lg:py-0">
 				<span className="flex flex-col text-center font-twid font-medium leading-none text-3xl md:text-5xl lg:text-[6vw]">
 					<span>WILDBOYS TRIBE</span>
 					<span>NIGHTLIFE & ENTERTAINMENT ARCHITECTS</span>
@@ -38,7 +39,7 @@ export default function HeroText() {
 			</div>
 
 			{/* Footer */}
-			<div className="min-h-[6vh] w-full border-b border-black dark:border-zinc-600 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 px-4 lg:px-7 py-2 font-twid text-sm md:text-base lg:text-lg text-black dark:text-zinc-400">
+			<div className="min-h-[6vh] w-full border-b border-zinc-100 dark:border-zinc-900 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 px-4 lg:px-7 py-2 font-twid text-sm md:text-base lg:text-lg text-black dark:text-zinc-400">
 				<span>Powered by AI-enhanced workflows</span>
 				<span>Pune, Bangalore - India</span>
 			</div>

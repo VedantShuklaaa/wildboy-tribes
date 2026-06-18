@@ -86,9 +86,9 @@ export default function Services() {
 			{data.map((item, idx) => (
 				<div
 					key={idx}
-					className="w-full border-b border-black dark:border-zinc-600"
+					className="w-full border-b border-zinc-100 dark:border-zinc-900"
 				>
-					<div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8 py-10 lg:py-16">
+					<div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8 py-10 ">
 
 						{/* Heading */}
 						<div className="flex flex-col gap-2">

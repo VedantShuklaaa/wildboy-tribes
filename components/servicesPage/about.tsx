@@ -3,7 +3,7 @@ import ProcessCardLeft, { ProcessCardRight } from "../layout/verticalCarousel/ve
 
 export default function AboutUs() {
 	return (
-		<div className="w-full flex flex-col justify-between border-b border-black dark:border-zinc-600">
+		<div className="w-full flex flex-col justify-between border-b border-zinc-100 dark:border-zinc-900">
 			<section className="relative w-full">
 				<div className="flex flex-col md:flex-row justify-between px-4 md:px-6 py-12 lg:py-24 gap-10 lg:gap-0">
 

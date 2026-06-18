@@ -23,7 +23,7 @@ export default function Hero2() {
 
 	return (
 		<div
-			className="min-h-[70vh] w-full border-b border-black dark:border-zinc-600 flex flex-col"
+			className="min-h-[70vh] w-full border-b border-zinc-100 dark:border-zinc-900 flex flex-col"
 			id="about"
 		>
 			<div className="flex flex-col lg:flex-row flex-1">
@@ -32,10 +32,10 @@ export default function Hero2() {
 					<div className="flex flex-col justify-center flex-1">
 						{items.map((item, idx) => (
 							<Link
+								key={idx}
 								href={item.href}
 							>
 								<div
-									key={idx}
 									onMouseEnter={() => setActive(item.label)}
 									onMouseLeave={() => setActive(null)}
 									className="relative flex items-center justify-between w-full cursor-pointer overflow-hidden px-2 lg:px-4"
@@ -86,10 +86,10 @@ export default function Hero2() {
 					<div className="flex flex-col gap-4">
 						<ScrollRevealText
 							text={text}
-							className="text-xl md:text-3xl lg:text-4xl"
+							className="text-heading-lg"
 						/>
 
-						<Link className="group relative w-fit h-10 px-5 border-2 rounded-xl border-black dark:border-white flex items-center justify-center overflow-hidden" href="/about">
+						<Link className="group relative w-fit h-10 px-5 border-2 rounded-xl border-zinc-100 dark:border-white flex items-center justify-center overflow-hidden" href="/about">
 							<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
 							<span className="relative z-10">
 								<SlidingText text="ABOUT US" />
@@ -99,7 +99,7 @@ export default function Hero2() {
 				</div>
 			</div>
 
-			<BottomDesc text1="© Featured Projects" text2="(CAD® — 03)" text3="Digital Showcase" />
+			<BottomDesc text1="© Featured Projects" text2="(CAD® — 03)" text3="Digital Showcase" className="text-black dark:text-zinc-400" />
 		</div>
 	)
 }

@@ -2,7 +2,7 @@ import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
 export default function Hero() {
 	return (
-		<div className="min-h-[40vh] lg:h-[60vh] w-full flex flex-col border-b border-black dark:border-zinc-600">
+		<div className="min-h-[40vh] lg:h-[60vh] w-full flex flex-col border-b border-zinc-100 dark:border-zinc-900">
 			<div className="flex-1 w-full flex flex-col lg:flex-row items-center px-4 lg:px-6 py-6 lg:py-0 gap-6 lg:gap-0">
 				<div className="hidden lg:block h-full w-full" />
 
@@ -14,7 +14,7 @@ export default function Hero() {
 				</div>
 			</div>
 
-			<BottomDesc text1="© Studio Capabilities" text2="(CAD® — 02)" text3="Digital Execution" />
+			<BottomDesc text1="© Studio Capabilities" text2="(CAD® — 02)" text3="Digital Execution" className="text-black dark:text-zinc-400"/>
 		</div>
 	);
 }

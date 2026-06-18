@@ -19,36 +19,35 @@ export default function ScrollRevealText({
 	text,
 	className = "",
 	initialColor = "text-zinc-600",
-	stagger = 0.01,
-	start = "top 80%",
-	end = "bottom 40%",
+	stagger = 0.1,
+	start = "top 75%",
+	end = "top 45%",
 }: ScrollRevealTextProps) {
 	const container = useRef<HTMLParagraphElement>(null);
 
 	useGSAP(
 		() => {
 			if (!container.current) return;
+
 			const words = container.current.querySelectorAll(".char");
 
 			gsap.to(words, {
-				color: "var(--foreground)",
-				stagger: 0.03,
+				color: "var(--foreground)", 
+				stagger,
 				ease: "none",
 				scrollTrigger: {
 					trigger: container.current,
 					start,
 					end,
-					scrub: 1,
+					scrub: 0.5,
 				},
 			});
 		},
-		{ scope: container, dependencies: [] }
+		{ scope: container }
 	);
+
 	return (
-		<p
-			ref={container}
-			className={`mix-blend-difference ${className}`}
-		>
+		<p ref={container} className={`${className}`}>
 			{text.split(" ").map((word, i) => (
 				<span
 					key={i}

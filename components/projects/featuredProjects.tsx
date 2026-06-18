@@ -19,7 +19,7 @@ export default function FeaturedProjects() {
 	const [hovered, setHovered] = useState<string | null>(null);
 
 	return (
-		<section className="relative min-h-screen w-full overflow-hidden bg-black">
+		<section className="relative min-h-screen w-full overflow-hidden bg-black border-b border-zinc-100 dark:border-zinc-900">
 			{/* Header */}
 			<div className="flex flex-col md:flex-row md:justify-between p-4 gap-6 backdrop-blur-xl bg-white/5">
 				<div className="leading-none z-50">
@@ -54,7 +54,6 @@ export default function FeaturedProjects() {
 								src={project.src}
 								alt={project.title}
 								fill
-								quality={100}
 								className="object-cover transition-transform duration-700 group-hover:scale-105"
 							/>
 
@@ -110,7 +109,6 @@ export default function FeaturedProjects() {
 									src={project.src}
 									alt={project.title}
 									fill
-									quality={100}
 									sizes="520px"
 									className="object-cover transition-transform duration-700 group-hover:scale-105"
 								/>

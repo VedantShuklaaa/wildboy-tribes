@@ -21,14 +21,16 @@ export default function Hero() {
 						<TiltCard
 							tilt="-2"
 							className="h-[500px] w-[350px] 2xl:h-[800px] 2xl:w-[700px]"
-						/>
-
-						<Image
-							src="/1.png"
-							alt="Front Card"
-							fill
-							className="object-cover pointer-events-none"
-						/>
+						>
+							<Image
+								src="/1.png"
+								alt="Front Card"
+								fill
+								priority
+								sizes="(max-width: 1536px) 350px, 700px"
+								className="object-cover pointer-events-none"
+							/>
+						</TiltCard>
 					</div>
 
 					{/* Back Card */}
@@ -36,14 +38,15 @@ export default function Hero() {
 						<TiltCard
 							tilt="2"
 							className="h-[500px] w-[350px] 2xl:h-[800px] 2xl:w-[700px]"
-						/>
-
-						<Image
-							src="/2.png"
-							alt="Back Card"
-							fill
-							className="object-cover pointer-events-none"
-						/>
+						>
+							<Image
+								src="/2.png"
+								alt="Back Card"
+								fill
+								sizes="(max-width: 1536px) 350px, 700px"
+								className="object-cover pointer-events-none"
+							/>
+						</TiltCard>
 					</div>
 				</div>
 			</div>

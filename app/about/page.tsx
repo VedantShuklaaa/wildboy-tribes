@@ -36,7 +36,7 @@ export default function Page() {
 			</Reveal>
 			<FloatCard />
 
-			<div className="h-screen w-full flex flex-col border-b border-black dark:border-zinc-600">
+			<div className="h-screen w-full flex flex-col border-b border-zinc-100 dark:border-zinc-900">
 				<div className="flex flex-col p-4">
 					<span className="leading-none">
 						<h1 className="text-display-md font-druk">MEET THE TEAM</h1>
