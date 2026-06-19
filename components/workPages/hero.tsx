@@ -117,13 +117,13 @@ export default function Hero() {
 	);
 
 	return (
-		<div className="h-screen w-full flex flex-col lg:flex-row items-center justify-center relative bg-linear-to-b from-white via-[#ff2d55] to-red-500 leading-none">
-			<div className="lg:h-full w-full flex flex-col items-center lg:items-start justify-center lg:justify-start text-black z-30 py-5 lg:px-10 lg:py-20">
+		<div className="h-screen w-full flex flex-col lg:flex-row items-center justify-center relative leading-none">
+			<div className="lg:h-full w-full flex flex-col items-center lg:items-start justify-center lg:justify-start z-30 py-5 lg:px-10 lg:py-20">
 				<span>
-					<p className="text-black text-display-md md:text-display-lg lg:text-display-md font-druk z-30 flex">EXPERTISE</p>
+					<p className="text-display-md md:text-display-lg lg:text-display-md font-druk z-30 flex">EXPERTISE</p>
 				</span>
 				<span className="text-center lg:text-start 2xl:w-[30vw]">
-					<p className="text-heading-md md:text-heading-lg">We don't just build for launch day. We build for everything that came before it, and it <span className="italic font-[600]">growth</span> that comes after it.</p>
+					<p className="text-heading-md md:text-heading-lg text-zinc-400">We don't just build for launch day. We build for everything that came before it, and it <span className="italic font-[600]">growth</span> that comes after it.</p>
 				</span>
 			</div>
 

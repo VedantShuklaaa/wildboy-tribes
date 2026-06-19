@@ -11,13 +11,13 @@ export const metadata = {
 export default function Page() {
 	return (
 		<div className="bg-background w-full overflow-hidden">
-			<div className="min-h-[40vh] lg:h-[60vh] w-full flex flex-col items-center justify-center gap-4 md:gap-20 leading-none bg-gradient-to-b from-white via-purple-300 to-purple-500">
+			<div className="min-h-[40vh] lg:h-[60vh] w-full flex flex-col items-center justify-center gap-4 md:gap-20 leading-none">
 				<span className="leading-none">
-					<h1 className="text-display-sm sm:text-display-lg tracking-tighter text-black text-center font-bold font-druk">IT STARTS WITH A CONVERSATION</h1>
+					<h1 className="text-display-sm sm:text-display-lg tracking-tighter text-center font-bold font-druk">IT STARTS WITH A CONVERSATION</h1>
 				</span>
 
 				<span className="px-2 md:px-20 lg:px-50 2xl:px-110">
-					<p className="text-black text-heading-lg text-center font-twid">If you're considering working together, this is the right place to start. Every message is read by a partner.</p>
+					<p className="text-zinc-400 text-heading-lg text-center font-twid">If you're considering working together, this is the right place to start. Every message is read by a partner.</p>
 				</span>
 			</div>
 

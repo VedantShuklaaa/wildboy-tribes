@@ -4,6 +4,7 @@ import FloatCard from "@/components/aboutUsPage/floatCard";
 import ContactUs from "@/components/contactUsCard/contactUs";
 import BottomDesc from "@/components/layout/bottomDesc/bottomDesc";
 import { OrbitBackground } from "@/components/orbitBackground/withoutScrollTrigger";
+import Image from "next/image";
 
 
 export const metadata = {
@@ -14,14 +15,14 @@ export const metadata = {
 export default function Page() {
 	return (
 		<div className="w-full bg-background overflow-hidden">
-			<div className="w-full flex flex-col items-center gap-10 justify-between bg-linear-to-b from-white via-purple-300 to-[#938ACF]">
-				<div className="w-full max-w-8xl flex flex-col gap-2 items-center p-4 mt-10 leading-none">
+			<div className="w-full flex flex-col items-center gap-10 justify-between">
+				<div className="w-[90%] max-w-8xl flex flex-col gap-2 items-center p-4 mt-10 leading-none">
 					<span className="text-display-md leading-none text-center">
-						<h1 className="leading-none text-black font-druk font-bold">THIS PAGE ISN'T ABOUT US, IT'S ABOUT YOU.</h1>
+						<h1 className="leading-none font-druk font-bold">THIS PAGE ISN'T ABOUT US, IT'S ABOUT YOU.</h1>
 					</span>
 
 					<span className="max-w-4xl text-center">
-						<p className="text-body-sm md:text-body-lg font-druk text-zinc-800">
+						<p className="text-body-sm md:text-body-lg font-druk text-zinc-400">
 							We are <span className="italic">not</span> vendors. We're an extension
 							of your team across brand and web.
 						</p>
@@ -29,11 +30,17 @@ export default function Page() {
 				</div>
 
 
-				<div className="h-60 xl:h-110 w-60 xl:w-110 rounded-full border">
-
+				<div className="relative h-60 w-60 overflow-hidden rounded-full xl:h-110 xl:w-110">
+					<Image
+						src="/vector.png"
+						alt="Vector graphic"
+						fill
+						className="object-cover"
+						sizes="(max-width: 1280px) 240px, 440px"
+					/>
 				</div>
 
-				<BottomDesc text1="© About Apes" text2="(CAD® — 02)" text3="Behind Us" className="text-black" />
+				<BottomDesc text1="© About Apes" text2="(CAD® — 02)" text3="Behind Us" className="text-black dark:text-zinc-400" />
 			</div>
 
 			<Reveal>
