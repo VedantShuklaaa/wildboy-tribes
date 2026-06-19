@@ -15,7 +15,7 @@ export default function DetailCard() {
 	useGSAP(() => {
 		const cards = gsap.utils.toArray<HTMLElement>(".service-card");
 
-		cards.forEach((card, index) => {
+		cards.forEach((card) => {
 			gsap.fromTo(
 				card,
 				{

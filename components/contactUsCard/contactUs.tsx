@@ -204,47 +204,6 @@ export function BottomLinks() {
 }
 
 
-type LinkItem = {
-	label: string;
-	href?: string;
-};
-
-function AnimatedLinks({
-	items,
-	isTransition = false,
-}: {
-	items: LinkItem[];
-	isTransition?: boolean;
-}) {
-	return (
-		<motion.div
-			variants={container}
-			initial="hidden"
-			whileInView="show"
-			viewport={{ once: true }}
-			className="flex flex-wrap gap-x-2 gap-y-1"
-		>
-			{items.map((link, i) => (
-				<motion.div
-					key={link.label}
-					variants={item}
-					className="flex items-center"
-				>
-					{isTransition ? (
-						<TransitionLink href={link.href!}>
-							<NavLink text={link.label} />
-						</TransitionLink>
-					) : (
-						<NavLink text={link.label} />
-					)}
-
-					{i < items.length - 1 && ","}
-				</motion.div>
-			))}
-		</motion.div>
-	);
-}
-
 function InputField({
 	id,
 	type,

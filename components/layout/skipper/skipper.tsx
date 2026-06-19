@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
@@ -121,15 +122,15 @@ const Column = ({ images, y, topOffset }: ColumnProps) => {
 						className="relative w-full flex-shrink-0 overflow-hidden border duration-300 hover:scale-[1.02]"
 						style={{
 							backgroundColor: color,
-							// taller cards on mobile so they fill more space
 							height: "clamp(180px, 40vw, 380px)",
 						}}
 					>
-						<img
+						<Image
 							src={src}
 							alt=""
-							className="h-full w-full object-cover"
-							onError={(e) => { e.currentTarget.style.display = "none"; }}
+							fill
+							className="object-cover"
+							sizes="(max-width: 768px) 100vw, 50vw"
 						/>
 					</div>
 				);

@@ -13,6 +13,7 @@ export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const pathname = usePathname();
+	const previousPathname = useRef(pathname);
 	const navbarRef = useRef<HTMLDivElement>(null);
 	const isOpenRef = useRef(false);
 
@@ -21,7 +22,10 @@ export default function Navbar() {
 	}, [isOpen]);
 
 	useEffect(() => {
-		setIsOpen(false);
+		if (previousPathname.current !== pathname) {
+			setIsOpen(false);
+			previousPathname.current = pathname;
+		}
 	}, [pathname]);
 
 	useGSAP(

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { NavLink, SentenceRoll } from "../layout/navAnimation/navAnimation";
+import { SentenceRoll } from "../layout/navAnimation/navAnimation";
 import SlidingText from "../layout/aboutUsButton/aboutUsButton";
 import BottomDesc from "../layout/bottomDesc/bottomDesc";
 
@@ -24,7 +24,7 @@ export default function Links() {
 			<div className="flex flex-col gap-10 w-full p-4">
 				<span className="py-2 w-full flex flex-col gap-4 lg:px-20 xl:px-60 2xl:px-100">
 					<span className="">
-						<p className="text-heading-lg">We build what doesn’t exist yet. With brands, artists, and institutions, we shape ideas into identities and experiences that move culture forward.</p>
+						<p className="text-heading-lg">We build what doesn&rsquo;t exist yet. With brands, artists, and institutions, we shape ideas into identities and experiences that move culture forward.</p>
 					</span>
 					<span className="">
 						<p className="text-body-sm text-zinc-400 ">For new projects, collaborations, or inquiries, please add your details to the form</p>
@@ -187,7 +187,7 @@ export function ContactForm() {
 						<span>In short,</span>
 
 						<span className="text-zinc-500">
-							Here's a brief description of my request*
+							Here&rsquo;s a brief description of my request*
 						</span>
 					</div>
 
@@ -201,7 +201,7 @@ export function ContactForm() {
 				</div>
 
 				<div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
-					<span>I’ll leave my contacts:</span>
+					<span>I&rsquo;ll leave my contacts:</span>
 
 					<input
 						name="email"

@@ -17,7 +17,7 @@ export default function Page() {
 				</span>
 
 				<span className="px-2 md:px-20 lg:px-50 2xl:px-110">
-					<p className="text-zinc-400 text-heading-lg text-center font-twid">If you're considering working together, this is the right place to start. Every message is read by a partner.</p>
+					<p className="text-zinc-400 text-heading-lg text-center font-twid">If you&rsquo;re considering working together, this is the right place to start. Every message is read by a partner.</p>
 				</span>
 			</div>
 

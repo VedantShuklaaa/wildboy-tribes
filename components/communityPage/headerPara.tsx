@@ -11,9 +11,9 @@ export default function HeaderPara() {
 					across music, media, and entertainment — forming an evolving ecosystem
 					driven by ideas, collaboration, and impact. We believe in collisions —
 					where different styles, disciplines, and perspectives come together to
-					create what didn't exist before. From nightlife to digital ecosystems,
+					create what didn&rsquo;t exist before. From nightlife to digital ecosystems,
 					we operate at the intersection of creativity, systems, and culture —
-					where ideas don't just exist, they scale.
+					where ideas don&rsquo;t just exist, they scale.
 				</p>
 			</div>
 		</div>

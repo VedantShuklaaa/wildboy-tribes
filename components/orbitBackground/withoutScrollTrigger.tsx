@@ -1,7 +1,6 @@
 "use client";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -13,17 +12,6 @@ interface OrbitBackgroundProps {
 }
 
 const CARD_COUNT = 8;
-
-const ORBIT_IMAGES = [
-	"/1.png",
-	"/2.png",
-	"/3.png",
-	"/4.png",
-	"/5.png",
-	"/6.png",
-	"/6.png",
-	"/6.png",
-];
 
 const getRadius = (width: number) => {
 	if (width < 375) return 120;
@@ -155,13 +143,7 @@ export function OrbitBackground({
 								}}
 							>
 								<div className="relative h-[110px] w-[140px] overflow-hidden rounded-3xl shadow-2xl sm:h-[120px] sm:w-[200px] md:h-[180px] md:w-[250px] lg:h-[280px] lg:w-[300px] bg-linear-to-t from-white via-purple-300 to-[#938ACF]">
-									{/*<Image
-										src={ORBIT_IMAGES[index]}
-										alt="NAH"
-										fill
-										className="object-cover"
-										sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
-									/>*/}
+
 								</div>
 							</div>
 						</div>

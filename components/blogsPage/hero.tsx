@@ -1,7 +1,4 @@
 "use client";
-import { Skiper49 } from "../layout/skipper/skipper2";
-
-
 
 export default function Hero() {
 	return (

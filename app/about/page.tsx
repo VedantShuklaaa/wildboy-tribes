@@ -18,12 +18,12 @@ export default function Page() {
 			<div className="w-full flex flex-col items-center gap-10 justify-between">
 				<div className="w-[90%] max-w-8xl flex flex-col gap-2 items-center p-4 mt-10 leading-none">
 					<span className="text-display-md leading-none text-center">
-						<h1 className="leading-none font-druk font-bold">THIS PAGE ISN'T ABOUT US, IT'S ABOUT YOU.</h1>
+						<h1 className="leading-none font-druk font-bold">THIS PAGE ISN&rsquo;T ABOUT US, IT&rsquo;S ABOUT YOU.</h1>
 					</span>
 
 					<span className="max-w-4xl text-center">
 						<p className="text-body-sm md:text-body-lg font-druk text-zinc-400">
-							We are <span className="italic">not</span> vendors. We're an extension
+							We are <span className="italic">not</span> vendors. We&rsquo;re an extension
 							of your team across brand and web.
 						</p>
 					</span>

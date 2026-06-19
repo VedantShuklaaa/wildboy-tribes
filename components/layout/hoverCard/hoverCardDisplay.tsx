@@ -1,5 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 
 const COLORS = [
@@ -43,11 +44,15 @@ export default function HoverExpand() {
 				>
 					{/* only render img if src exists */}
 					{img.src && (
-						<img
-							src={img.src}
-							alt="NA"
-							className="w-full h-full object-cover"
-						/>
+						<div className="relative w-full h-full">
+							<Image
+								src={img.src}
+								alt="NA"
+								fill
+								className="object-cover"
+								sizes="100vw"
+							/>
+						</div>
 					)}
 
 					{/* rest stays the same */}

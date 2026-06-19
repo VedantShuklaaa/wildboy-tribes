@@ -1,47 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import {
-	Autoplay,
-	EffectCoverflow,
-	Navigation,
-	Pagination,
-} from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { cn } from "@/lib/utils"; import { useState } from "react";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 function SlideImage({
 	src,
 	alt,
-	index,
 }: {
 	src: string;
 	alt: string;
-	index: number;
 }) {
-	const [failed, setFailed] = useState(false);
-
-	const color = fallbackColors[index % fallbackColors.length];
-
-	if (failed) {
-		return (
-			<div
-				className="flex h-full w-full items-center justify-center"
-				style={{ backgroundColor: color }}
-			>
-				<span className="text-sm font-medium text-white">
-					Image unavailable
-				</span>
-			</div>
-		);
-	}
-
 	return (
 		<Image
 			src={src}
@@ -53,17 +29,6 @@ function SlideImage({
 		/>
 	);
 }
-
-const fallbackColors = [
-	"#E75361",
-	"#B39DDB",
-	"#80CBC4",
-	"#FFCC80",
-	"#90CAF9",
-	"#A5D6A7",
-	"#F48FB1",
-	"#CE93D8",
-];
 
 const Skiper49 = () => {
 	const images = [
@@ -199,7 +164,6 @@ const Carousel_003 = ({
 							<SlideImage
 								src={image.src}
 								alt={image.alt}
-								index={index}
 							/>
 						</SwiperSlide>
 					))}

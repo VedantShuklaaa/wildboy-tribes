@@ -18,7 +18,7 @@ export default function Jobs() {
 				</div>
 				<div className="flex flex-col text-body-sm justify-center">
 					<span className="w-full flex items-center justify-center text-center">
-						<p>Mail your CV to <span className="text-purple-400">@gmail.com</span> with subject - <span className="font-[700]">'job application'</span> and mention the role you're applying for.</p>
+						<p>Mail your CV to <span className="text-purple-400">@gmail.com</span> with subject - <span className="font-[700]">&rsquo;job application&rsquo;</span> and mention the role you&rsquo;re applying for.</p>
 					</span>
 					<span className="w-full flex items-center justify-center text-center">
 						<p>Please make sure your application is supported by a professional cover letter</p>

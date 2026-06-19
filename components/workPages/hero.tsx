@@ -123,7 +123,7 @@ export default function Hero() {
 					<p className="text-display-md md:text-display-lg lg:text-display-md font-druk z-30 flex">EXPERTISE</p>
 				</span>
 				<span className="text-center lg:text-start 2xl:w-[30vw]">
-					<p className="text-heading-md md:text-heading-lg text-zinc-400">We don't just build for launch day. We build for everything that came before it, and it <span className="italic font-[600]">growth</span> that comes after it.</p>
+					<p className="text-heading-md md:text-heading-lg text-zinc-400">We don&rsquo;t just build for launch day. We build for everything that came before it, and it <span className="italic font-[600]">growth</span> that comes after it.</p>
 				</span>
 			</div>
 
