@@ -9,12 +9,12 @@ const COLORS = [
 ];
 
 const IMAGES = [
-	{ src: "/1.png", label: "Brand Identity" },
-	{ src: "/2.png", label: "Web Design" },
-	{ src: "/3.png", label: "Motion" },
-	{ src: "/4.png", label: "AI Labs" },
-	{ src: "/5.png", label: "Development" },
-	{ src: "/6.png", label: "Strategy" },
+	{ src: "/1.webp", label: "Brand Identity" },
+	{ src: "/2.webp", label: "Web Design" },
+	{ src: "/3.webp", label: "Motion" },
+	{ src: "/4.webp", label: "AI Labs" },
+	{ src: "/5.webp", label: "Development" },
+	{ src: "/6.webp", label: "Strategy" },
 ];
 
 export default function HoverExpand() {

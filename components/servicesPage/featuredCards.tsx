@@ -24,7 +24,7 @@ export default function Feature() {
 						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
 							<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-[10px] group">
 								<Image
-									src="/1.png"
+									src="/1.webp"
 									alt="NAH"
 									fill
 									className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -49,7 +49,7 @@ export default function Feature() {
 						<div className="flex items-center justify-center px-4 md:px-6 pb-6">
 							<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-[10px] group">
 								<Image
-									src="/KITTY&CHAOS.png"
+									src="/KITTY&CHAOS.webp"
 									alt="NAH"
 									fill
 									className="object-cover transition-transform duration-700 group-hover:scale-105"

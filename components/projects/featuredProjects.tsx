@@ -7,13 +7,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const projects = [
-	{ title: "Vibrant", tilt: -20, x: -390, y: 10, z: 10, color: "#d8cdb5", src: "/1.png" },
-	{ title: "Just Salad", tilt: -10, x: -260, y: -50, z: 20, color: "#7ca4ff", src: "/2.png" },
-	{ title: "Epbright", tilt: -2, x: -90, y: -100, z: 30, color: "#d8d3c8", src: "/3.png" },
+	{ title: "Vibrant", tilt: -20, x: -390, y: 10, z: 10, color: "#d8cdb5", src: "/1.webp" },
+	{ title: "Just Salad", tilt: -10, x: -260, y: -50, z: 20, color: "#7ca4ff", src: "/2.webp" },
+	{ title: "Epbright", tilt: -2, x: -90, y: -100, z: 30, color: "#d8d3c8", src: "/3.webp" },
 
-	{ title: "PBS", tilt: 5, x: 90, y: -100, z: 40, color: "#444444", src: "/4.png" },
-	{ title: "Titan", tilt: 12, x: 250, y: -40, z: 50, color: "#efefef", src: "/5.png" },
-	{ title: "Betterment", tilt: 22, x: 380, y: 80, z: 60, color: "#4d8ff5", src: "/6.png" },
+	{ title: "PBS", tilt: 5, x: 90, y: -100, z: 40, color: "#444444", src: "/4.webp" },
+	{ title: "Titan", tilt: 12, x: 250, y: -40, z: 50, color: "#efefef", src: "/5.webp" },
+	{ title: "Betterment", tilt: 22, x: 380, y: 80, z: 60, color: "#4d8ff5", src: "/6.webp" },
 ];
 
 export default function FeaturedProjects() {

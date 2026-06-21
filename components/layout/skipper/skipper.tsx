@@ -5,18 +5,18 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-	"/1.png",
-	"/2.png",
-	"/3.png",
-	"/4.png",
-	"/5.png",
-	"/6.png",
-	"/AQUA_RUMBLE.png",
-	"/KITTY&CHAOS.png",
-	"/WILDRUN.png",
-	"/1.png",
-	"/2.png",
-	"/3.png",
+	"/1.webp",
+	"/2.webp",
+	"/3.webp",
+	"/4.webp",
+	"/5.webp",
+	"/6.webp",
+	"/AQUA_RUMBLE.webp",
+	"/KITTY&CHAOS.webp",
+	"/WILDRUN.webp",
+	"/1.webp",
+	"/2.webp",
+	"/3.webp",
 ];
 
 const fallbackColors = [

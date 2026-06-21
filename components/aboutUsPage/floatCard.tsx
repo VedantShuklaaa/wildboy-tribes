@@ -17,11 +17,11 @@ export default function FloatCard() {
 
 			<div className="h-full w-full relative">
 				<FloatingCard y={100} className="absolute top-0 right-4">
-					<TiltImage src="/1.png" alt="Nightlife venue" sizes="320px" />
+					<TiltImage src="/1.webp" alt="Nightlife venue" sizes="320px" />
 				</FloatingCard>
 
 				<FloatingCard y={100} className="absolute bottom-0 left-4">
-					<TiltImage src="/2.png" alt="Nightlife crowd" sizes="400px" />
+					<TiltImage src="/2.webp" alt="Nightlife crowd" sizes="400px" />
 				</FloatingCard>
 			</div>
 		</div>

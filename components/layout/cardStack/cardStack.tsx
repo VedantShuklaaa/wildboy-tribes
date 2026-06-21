@@ -14,7 +14,7 @@ const cards = [
 		color: "bg-black",
 		tilt: "2",
 		cardColor: "bg-red-400",
-		src: "/1.png",
+		src: "/1.webp",
 		description: "We partner with brands to create design systems that scale. Our work includes art direction, responsive web design, and visual content that communicates what words can't.",
 	},
 	{
@@ -22,7 +22,7 @@ const cards = [
 		color: "bg-purple-300",
 		tilt: "-4",
 		cardColor: "bg-black",
-		src: "/2.png",
+		src: "/2.webp",
 		description: "We build websites that empower founders and marketers to react quickly, test concepts, and measure results. We cut our teeth at full-stack developers on enterprise platforms and custom builds, and we apply that same discipline to low-code systems like Webflow. We specialize in large-scale migrations from WordPress to Webflow, helping organizations move past painful maintenance and Frankenstein builds to clean, modern systems.",
 	},
 	{
@@ -30,7 +30,7 @@ const cards = [
 		color: "bg-teal-200",
 		tilt: "2",
 		cardColor: "bg-white",
-		src: "/3.png",
+		src: "/3.webp",
 		description: "Our approach to strategy is precise, efficient, and grounded in expertise. We consider everything from competitive landscape and project goals to tactical plans for SEO and conversion optimization. Strategic planning sets the foundation for creative work, so we move through it quickly and deliberately. Our process eliminates the bottlenecks and endless conceptual discussions that drag out early phases and cause delays downstream.",
 	},
 	{
@@ -38,7 +38,7 @@ const cards = [
 		color: "bg-black",
 		tilt: "-4",
 		cardColor: "bg-red-400",
-		src: "/4.png",
+		src: "/4.webp",
 		description: "We partner with brands to create design systems that scale. Our work includes art direction, responsive web design, and visual content that communicates what words can't.",
 	},
 ];

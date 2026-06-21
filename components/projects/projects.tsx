@@ -11,32 +11,32 @@ const projects = [
 	{
 		title: "Groww",
 		description: "Launch Video Campaign",
-		src: "/1.png"
+		src: "/1.webp"
 	},
 	{
 		title: "Cult",
 		description: "Smartwatch Launch Video",
-		src: "/2.png"
+		src: "/2.webp"
 	},
 	{
 		title: "Arovalis",
 		description: "Brand Identity Design",
-		src: "/3.png"
+		src: "/3.webp"
 	},
 	{
 		title: "Pure Project",
 		description: "Brand Identity & Packaging Design",
-		src: "/4.png"
+		src: "/4.webp"
 	},
 	{
 		title: "Slice",
 		description: "Feature Launch Commercial",
-		src: "/5.png"
+		src: "/5.webp"
 	},
 	{
 		title: "MadDrop",
 		description: "Website Design & Development",
-		src: "/6.png"
+		src: "/6.webp"
 	},
 ];
 
@@ -117,7 +117,7 @@ export default function Projects() {
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
 						<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-[10px] group">
 							<Image
-								src="/AQUA_RUMBLE.png"
+								src="/AQUA_RUMBLE.webp"
 								alt="NAH"
 								fill
 								className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -142,7 +142,7 @@ export default function Projects() {
 					<div className="flex items-center justify-center px-4 md:px-6 pb-6">
 						<div className="project-card relative aspect-[16/10] w-full overflow-hidden rounded-[10px] group">
 							<Image
-								src="/KITTY&CHAOS.png"
+								src="/KITTY&CHAOS.webp"
 								alt="NAH"
 								fill
 								className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -33,31 +33,31 @@ function SlideImage({
 const Skiper49 = () => {
 	const images = [
 		{
-			src: "/1.png",
+			src: "/1.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/2.png",
+			src: "/2.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/3.png",
+			src: "/3.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/4.png",
+			src: "/4.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/5.png",
+			src: "/5.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/5.png",
+			src: "/5.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 		{
-			src: "/6.png",
+			src: "/6.webp",
 			alt: "Illustrations by my fav AarzooAly",
 		},
 

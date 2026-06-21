@@ -6,12 +6,9 @@ import Reveal from "@/components/marquee/reveal";
 import { OrbitBackground } from "@/components/orbitBackground/withScrollTrigger";
 
 
-
-
-
 const text = "This is where we deploy our systems. Each space becomes a live environment where we test potential, apply operational expertise, and refine performance in real time. From unlocking venue potential to experimenting with new models, business architecture, and growth strategies, everything is built to drive relevance, consistency, and demand. If it doesn’t perform, it doesn’t stay.";
 
-export default function carouselPage() {
+export default function CarouselPage() {
 	return (
 		<div className="relative w-full font-twid border border-zinc-100 dark:border-zinc-900" >
 			<section className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center gap-6 lg:gap-8 border-b border-zinc-100 dark:border-zinc-900">

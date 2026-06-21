@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const FRONT_IMAGES = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"];
+const FRONT_IMAGES = ["/1.webp", "/2.webp", "/3.webp", "/4.webp", "/5.webp"];
 
 
 export default function Hero() {
@@ -175,7 +175,7 @@ export default function Hero() {
 							className="h-[500px] w-[350px] 2xl:h-[800px] 2xl:w-[700px]"
 						>
 							<Image
-								src="/2.png"
+								src="/2.webp"
 								alt="Back Card"
 								fill
 								sizes="(max-width: 1536px) 350px, 700px"

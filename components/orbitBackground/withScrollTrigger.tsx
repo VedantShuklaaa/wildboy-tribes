@@ -15,12 +15,12 @@ interface OrbitBackgroundProps {
 const CARD_COUNT = 6;
 
 const ORBIT_IMAGES = [
-	"/1.png",
-	"/2.png",
-	"/3.png",
-	"/4.png",
-	"/5.png",
-	"/6.png",
+	"/1.webp",
+	"/2.webp",
+	"/3.webp",
+	"/4.webp",
+	"/5.webp",
+	"/6.webp",
 ];
 
 const getRadius = (width: number) => {

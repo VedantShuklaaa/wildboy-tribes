@@ -1,7 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import dynamic from "next/dynamic";
 
 import HeroText from "@/components/hero/heroText";
 import { Loader } from "@/components/layout/loader/loader";
@@ -11,10 +10,9 @@ import Reveal from "@/components/marquee/reveal";
 import Marquee from "@/components/marquee/marquee1";
 import Services from "@/components/services/services";
 import ContactUs from "@/components/contactUsCard/contactUs";
-
-const FeaturedProjects = dynamic(() => import("@/components/projects/featuredProjects"));
-const CarouselPage = dynamic(() => import("@/components/layout/3DCarousel/carousel"));
-const ScrollCarousel = dynamic(() => import("@/components/marquee/rollerMarquee"));
+import FeaturedProjects from "../projects/featuredProjects";
+import ScrollCarousel from "../marquee/rollerMarquee";
+import CarouselPage from "../layout/3DCarousel/carousel";
 
 export default function HomeClient() {
 	const [showLoader, setShowLoader] = useState(true);

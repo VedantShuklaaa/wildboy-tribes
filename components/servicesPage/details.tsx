@@ -44,7 +44,7 @@ export default function DetailCard() {
 			<BigRevealCard className="mx-auto h-[35vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] w-[95vw] md:w-[85vw] lg:w-[70vw] overflow-hidden rounded-sm">
 				<div className="relative h-full w-full">
 					<Image
-						src="/AQUA_RUMBLE.png"
+						src="/AQUA_RUMBLE.webp"
 						alt="About"
 						fill
 						priority
