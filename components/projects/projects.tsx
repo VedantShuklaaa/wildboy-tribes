@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import Link from "next/link";
+import TransitionLink from "../layout/pageTransition/transitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +68,7 @@ export default function Projects() {
 			{/* Main Projects Grid */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 font-onest font-light border-t border-zinc-100 dark:border-zinc-900">
 				{projects.map((project, idx) => (
-					<Link
+					<TransitionLink
 						href={`/work/${project.title.toLocaleLowerCase()}`}
 						key={project.title}
 						className={`border-b border-zinc-100 transition-all duration-500 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 ${idx % 2 === 1 ? "lg:border-l lg:border-zinc-100 lg:dark:border-zinc-900" : ""}`}
@@ -95,7 +95,7 @@ export default function Projects() {
 								/>
 							</div>
 						</div>
-					</Link>
+					</TransitionLink>
 				))}
 			</div>
 
@@ -103,7 +103,7 @@ export default function Projects() {
 			<div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr_1fr] border-b border-zinc-100 dark:border-zinc-900">
 
 				{/* Bloc */}
-				<Link href="/work/bloc" className="lg:border-r border-zinc-100 dark:border-zinc-900 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 duration-500 transition-all">
+				<TransitionLink href="/work/bloc" className="lg:border-r border-zinc-100 dark:border-zinc-900 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 duration-500 transition-all">
 					<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 						<span className="text-display-sm">
 							Bloc
@@ -125,10 +125,10 @@ export default function Projects() {
 							/>
 						</div>
 					</div>
-				</Link>
+				</TransitionLink>
 
 				{/* Redmi */}
-				<Link href="/work/redmi" className="lg:border-r border-zinc-100 dark:border-zinc-900 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 duration-500 transition-all">
+				<TransitionLink href="/work/redmi" className="lg:border-r border-zinc-100 dark:border-zinc-900 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 duration-500 transition-all">
 					<div className="flex flex-col justify-center gap-2 px-4 md:px-6 lg:px-10 py-6">
 						<span className="text-display-sm">
 							Redmi 11S
@@ -150,15 +150,15 @@ export default function Projects() {
 							/>
 						</div>
 					</div>
-				</Link>
+				</TransitionLink>
 
 				{/* CTA */}
 				<div className="p-4 group overflow-hidden min-h-[250px] lg:min-h-0">
-					<Link href="/work" className="h-full min-h-[250px] lg:min-h-full w-full bg-[#ff2d55] rounded-[10px] transition-all cursor-pointer duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[1.1] group-hover:rounded-none flex items-center justify-center">
+					<TransitionLink href="/work" className="h-full min-h-[250px] lg:min-h-full w-full bg-[#ff2d55] rounded-[10px] transition-all cursor-pointer duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[1.1] group-hover:rounded-none flex items-center justify-center">
 						<span className="text-xl md:text-2xl lg:text-3xl text-black text-center px-4">
 							View All Projects
 						</span>
-					</Link>
+					</TransitionLink>
 				</div>
 			</div>
 		</div>

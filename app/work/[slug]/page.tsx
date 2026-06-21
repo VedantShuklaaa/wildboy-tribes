@@ -1,8 +1,8 @@
 import Marquee from "@/components/marquee/marquee1";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/constants";
+import TransitionLink from "@/components/layout/pageTransition/transitionLink";
 
 type Props = {
 	params: Promise<{ slug: string }>;
@@ -169,7 +169,7 @@ export default async function WorkPage({ params }: Props) {
 
 			<section className="grid w-full grid-cols-1 font-onest font-light lg:grid-cols-2">
 				{relatedProjects.map((item, idx) => (
-					<Link key={item.slug} href={`/work/${item.slug}`} className="group">
+					<TransitionLink key={item.slug} href={`/work/${item.slug}`} className="group">
 						<article
 							className={`min-h-[70vh] border-b border-zinc-100 transition-all duration-500 hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-950 ${idx % 2 === 1 ? "lg:border-l lg:border-zinc-100 lg:dark:border-zinc-900" : ""
 								}`}
@@ -197,7 +197,7 @@ export default async function WorkPage({ params }: Props) {
 								</div>
 							</div>
 						</article>
-					</Link>
+					</TransitionLink>
 				))}
 			</section>
 		</div>

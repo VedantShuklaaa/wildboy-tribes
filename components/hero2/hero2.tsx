@@ -4,8 +4,8 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ScrollRevealText from "@/components/scrolltriger/fillColor";
 import SlidingText from "../layout/aboutUsButton/aboutUsButton";
-import Link from "next/link";
 import BottomDesc from "../layout/bottomDesc/bottomDesc";
+import TransitionLink from "../layout/pageTransition/transitionLink";
 
 const items = [
 	{ label: "WORK", href: "/work" },
@@ -31,7 +31,7 @@ export default function Hero2() {
 				<div className="w-full lg:w-1/2 flex flex-col relative justify-center p-4">
 					<div className="flex flex-col justify-center flex-1">
 						{items.map((item, idx) => (
-							<Link
+							<TransitionLink
 								key={idx}
 								href={item.href}
 							>
@@ -76,7 +76,7 @@ export default function Hero2() {
 									</div>
 								</div>
 
-							</Link>
+							</TransitionLink>
 						))}
 					</div>
 				</div>
@@ -89,12 +89,12 @@ export default function Hero2() {
 							className="text-heading-lg"
 						/>
 
-						<Link className="group relative w-fit h-10 px-5 border-2 rounded-xl border-zinc-100 dark:border-white flex items-center justify-center overflow-hidden" href="/about">
+						<TransitionLink className="group relative w-fit h-10 px-5 border-2 rounded-xl border-zinc-100 dark:border-white flex items-center justify-center overflow-hidden" href="/about">
 							<div className="absolute inset-0 bg-[#ff2d55] origin-bottom scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100 rounded-xl" />
 							<span className="relative z-10">
 								<SlidingText text="ABOUT US" />
 							</span>
-						</Link>
+						</TransitionLink>
 					</div>
 				</div>
 			</div>

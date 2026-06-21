@@ -3,9 +3,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/constants";
+import TransitionLink from "../layout/pageTransition/transitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +52,7 @@ export default function Works() {
 				const isReverse = idx % 2 !== 0;
 
 				return (
-					<Link key={item.slug} href={`/work/${item.slug}`} className="block">
+					< TransitionLink key={item.slug} href={`/work/${item.slug}`} className="block">
 						<div
 							ref={(el) => {
 								cardsRef.current[idx] = el;
@@ -102,7 +102,7 @@ export default function Works() {
 								</div>
 							</div>
 						</div>
-					</Link>
+					</ TransitionLink>
 				);
 			})}
 		</section>

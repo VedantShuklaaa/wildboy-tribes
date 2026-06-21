@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { blogs } from "@/lib/constants";
+import TransitionLink from "../layout/pageTransition/transitionLink";
 
 
 const categories = ["All", "Nightlife", "Strategy", "Culture", "Trends", "Branding"];
@@ -95,7 +95,7 @@ export default function BlogGrid() {
 								ease: [0.16, 1, 0.3, 1],
 							}}
 						>
-							<Link
+							<TransitionLink
 								href={`/blog/${item.slug}`}
 								className="group flex flex-col gap-3"
 							>
@@ -146,7 +146,7 @@ export default function BlogGrid() {
 										{item.description}
 									</p>
 								</div>
-							</Link>
+							</TransitionLink>
 						</motion.div>
 					))}
 				</div>
