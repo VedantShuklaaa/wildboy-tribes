@@ -42,14 +42,14 @@ export default function DetailCard() {
 	return (
 		<div className="mt-20 md:mt-28 lg:mt-20 flex flex-col gap-8 lg:gap-10" ref={containerRef}>
 			<BigRevealCard className="mx-auto h-[35vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] w-[95vw] md:w-[85vw] lg:w-[70vw] overflow-hidden rounded-sm">
-				<div className="relative h-full w-full">
+				<div className="relative mx-auto w-full max-w-6xl aspect-[16/9]">
 					<Image
 						src="/AQUA_RUMBLE.webp"
-						alt="About"
+						alt="About section artwork"
 						fill
-						priority
 						sizes="(max-width: 768px) 95vw, (max-width: 1024px) 85vw, 70vw"
 						className="object-cover"
+						quality={70}
 					/>
 				</div>
 			</BigRevealCard>

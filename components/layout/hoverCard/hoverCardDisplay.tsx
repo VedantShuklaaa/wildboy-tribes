@@ -42,22 +42,22 @@ export default function HoverExpand() {
 						background: !img.src ? COLORS[i % COLORS.length] : undefined,
 					}}
 				>
-					{/* only render img if src exists */}
-					{img.src && (
-						<div className="relative w-full h-full">
+					<div className="relative w-full h-full">
+						{img.src && (
+
 							<Image
 								src={img.src}
-								alt="NA"
+								alt={img.label}
 								fill
 								className="object-cover"
-								sizes="100vw"
+								sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1024px) calc(100vw - 3rem), 1280px"
+								quality={70}
 							/>
-						</div>
-					)}
 
-					{/* rest stays the same */}
+						)}
+					</div>
 
-					{/* collapsed label — visible when not active */}
+
 					<AnimatePresence>
 						{active !== i && (
 							<motion.div

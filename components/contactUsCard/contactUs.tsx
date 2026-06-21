@@ -117,7 +117,7 @@ export default function ContactUs() {
 							</button>
 
 							<p className="text-zinc-500">
-								We typically respond within 1–2 business days.
+								We typically respond within 1-2 business days.
 							</p>
 						</form>
 

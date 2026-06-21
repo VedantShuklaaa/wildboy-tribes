@@ -5,7 +5,6 @@ import Image from "next/image";
 import { blogs } from "@/lib/constants";
 import TransitionLink from "../layout/pageTransition/transitionLink";
 
-
 const categories = ["All", "Nightlife", "Strategy", "Culture", "Trends", "Branding"];
 
 export default function BlogGrid() {
