@@ -25,14 +25,34 @@ export default function TransitionLink({
 
 		e.preventDefault();
 
+		const overlay = document.getElementById("page-transition");
+		if (!overlay) {
+			router.push(href);
+			return;
+		}
+
+		// Slide in (cover screen)
 		gsap.fromTo(
-			"#page-transition",
+			overlay,
 			{ y: "100%" },
 			{
 				y: "0%",
 				duration: 0.7,
 				ease: "power4.inOut",
-				onComplete: () => router.push(href),
+				onComplete: () => {
+					router.push(href);
+					// Slide out (reveal new page)
+					gsap.to(overlay, {
+						y: "-100%",
+						duration: 0.7,
+						delay: 0.1,
+						ease: "power4.inOut",
+						onComplete: () => {
+							// Reset position for next transition
+							gsap.set(overlay, { y: "100%" });
+						},
+					});
+				},
 			}
 		);
 	};
