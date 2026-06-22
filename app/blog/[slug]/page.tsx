@@ -1,7 +1,6 @@
-// app/blog/[slug]/page.tsx
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { blogs } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 
 type Props = {
 	params: Promise<{ slug: string }>;
@@ -10,9 +9,14 @@ type Props = {
 export default async function BlogPostPage({ params }: Props) {
 	const { slug } = await params;
 
-	const post = blogs.find((item) => item.slug === slug);
+	const { data: post, error } = await supabase
+		.from("blogs")
+		.select("*")
+		.eq("slug", slug)
+		.single();
 
-	if (!post) {
+	if (error || !post) {
+		if (error) console.error("Blog fetch error:", error.message);
 		notFound();
 	}
 
@@ -26,17 +30,19 @@ export default async function BlogPostPage({ params }: Props) {
 				</h1>
 
 				<div className="mt-6 relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-zinc-100">
-					<Image
-						src={post.src}
-						alt={post.title}
-						fill
-						className="object-cover"
-						sizes="100vw"
-					/>
+					{post.image_url ? (
+						<Image
+							src={post.image_url}
+							alt={post.title}
+							fill
+							className="object-cover"
+							sizes="100vw"
+						/>
+					) : null}
 				</div>
 
 				<div className="mt-6 flex flex-wrap gap-2">
-					{post.tags.map((tag) => (
+					{post.tags.map((tag: string) => (
 						<span
 							key={tag}
 							className="rounded-full border border-zinc-200 px-3 py-1 text-xs text-zinc-600"
